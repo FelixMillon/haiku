@@ -1,0 +1,552 @@
+{
+    "hiver":{
+        "tomber": {
+            "present":{
+                "1s": "tombe",
+                "2s": "tombes",
+                "3s": "tombe",
+                "1p": "tombons",
+                "2p": "tombez",
+                "3p": "tombent"
+            },
+            "passé":{
+                "1s": "suis tombé",
+                "2s": "es tombé",
+                "3s": "est tombé",
+                "1p": "sommes tombés",
+                "2p": "êtes tombés",
+                "3p": "sont tombés"
+            },
+            "futur":{
+                "1s": "tomberai",
+                "2s": "tomberas",
+                "3s": "tombera",
+                "1p": "tomberons",
+                "2p": "tomberez",
+                "3p": "tomberont"
+            }
+        },
+        "pleuvoir": {
+            "present": {
+                "1s": "pleus",
+                "2s": "pleus",
+                "3s": "pleut",
+                "1p": "pleuvons",
+                "2p": "pleuvez",
+                "3p": "pleuvent"
+            },
+            "passe": {
+                "1s": "ai plu",
+                "2s": "as plu",
+                "3s": "a plu",
+                "1p": "avons plu",
+                "2p": "avez plu",
+                "3p": "ont plu"
+            },
+            "futur": {
+                "1s": "pleuvrai",
+                "2s": "pleuvras",
+                "3s": "pleuvra",
+                "1p": "pleuvrons",
+                "2p": "pleuvrez",
+                "3p": "pleuvront"
+            }
+        },
+        "neiger": {
+            "present": {
+                "1s": "neige",
+                "2s": "neiges",
+                "3s": "neige",
+                "1p": "neigeons",
+                "2p": "neigez",
+                "3p": "neigent"
+            },
+            "passe": {
+                "1s": "ai neigé",
+                "2s": "as neigé",
+                "3s": "a neigé",
+                "1p": "avons neigé",
+                "2p": "avez neigé",
+                "3p": "ont neigé"
+            },
+            "futur": {
+                "1s": "neigerai",
+                "2s": "neigeras",
+                "3s": "neigera",
+                "1p": "neigerons",
+                "2p": "neigerez",
+                "3p": "neigeront"
+            }
+        },
+        "glacer": {
+            "present": {
+                "1s": "glace",
+                "2s": "glaces",
+                "3s": "glace",
+                "1p": "glaçons",
+                "2p": "glacez",
+                "3p": "glacent"
+            },
+            "passe": {
+                "1s": "ai glacé",
+                "2s": "as glacé",
+                "3s": "a glacé",
+                "1p": "avons glacé",
+                "2p": "avez glacé",
+                "3p": "ont glacé"
+            },
+            "futur": {
+                "1s": "glacerai",
+                "2s": "glaceras",
+                "3s": "glacera",
+                "1p": "glacerons",
+                "2p": "glacerez",
+                "3p": "glaceront"
+            }
+        },
+        "geler ": {
+            "present": {
+                "1s": "gèle",
+                "2s": "gèles",
+                "3s": "gèle",
+                "1p": "gelons",
+                "2p": "gelez",
+                "3p": "gèlent"
+            },
+            "passe": {
+                "1s": "ai gelé",
+                "2s": "as gelé",
+                "3s": "a gelé",
+                "1p": "avons gelé",
+                "2p": "avez gelé",
+                "3p": "ont gelé"
+            },
+            "futur": {
+                "1s": "gèlerai",
+                "2s": "gèleras",
+                "3s": "gèlera",
+                "1p": "gèlerons",
+                "2p": "gèlerez",
+                "3p": "gèleront"
+            }
+        },
+        "frissonner ": {
+            "present": {
+                "1s": "frissonne",
+                "2s": "frissonnes",
+                "3s": "frisonne",
+                "1p": "frissonnons",
+                "2p": "frissonnez",
+                "3p": "frissonnent"
+            },
+            "passe": {
+                "1s": "ai frissonné",
+                "2s": "as frissonné",
+                "3s": "a frissonné",
+                "1p": "avons frissonné",
+                "2p": "avez frissonné",
+                "3p": "ont frissonné"
+            },
+            "futur": {
+                "1s": "frissonnerai",
+                "2s": "frissonneras",
+                "3s": "frissonnera",
+                "1p": "frissonnerons",
+                "2p": "frissonnerez",
+                "3p": "frissonneront"
+            }
+        },
+        "enneiger ": {
+            "present": {
+                "1s": "enneige",
+                "2s": "enneiges",
+                "3s": "enneige",
+                "1p": "enneigeons",
+                "2p": "enneigez",
+                "3p": "enneigent"
+            },
+            "passe": {
+                "1s": "ai enneigé",
+                "2s": "as enneigé",
+                "3s": "a enneigé",
+                "1p": "avons enneigé",
+                "2p": "avez enneigé",
+                "3p": "ont enneigé"
+            },
+            "futur": {
+                "1s": "enneigerai",
+                "2s": "enneigeras",
+                "3s": "enneigera",
+                "1p": "enneigerons",
+                "2p": "enneigerez",
+                "3p": "enneigeront"
+            }
+        },
+        "floconner": {
+            "present": {
+                "1s": "floconne",
+                "2s": "floconnes",
+                "3s": "floconne",
+                "1p": "floconnons",
+                "2p": "floconnez",
+                "3p": "floconnent"
+            },
+            "passe": {
+                "1s": "ai floconné",
+                "2s": "as floconné",
+                "3s": "a floconné",
+                "1p": "avons floconné",
+                "2p": "avez floconné",
+                "3p": "ont floconné"
+            },
+            "futur": {
+                "1s": "floconnerai",
+                "2s": "floconneras",
+                "3s": "floconnera",
+                "1p": "floconnerons",
+                "2p": "floconnerez",
+                "3p": "floconneront"
+            }
+        },
+        "blottir": {
+            "present": {
+                "1s": "blottis",
+                "2s": "blottis",
+                "3s": "blottit",
+                "1p": "blottissons",
+                "2p": "blottissez",
+                "3p": "blottissent"
+            },
+            "passe": {
+                "1s": "me suis blotti",
+                "2s": "t'es blotti",
+                "3s": "s'est blotti",
+                "1p": "nous sommes blottis",
+                "2p": "vous êtes blottis",
+                "3p": "se sont blottis"
+            },
+            "futur": {
+                "1s": "blottirai",
+                "2s": "blottiras",
+                "3s": "blottera",
+                "1p": "blotterons",
+                "2p": "blotterez",
+                "3p": "blotteront"
+            }
+        },
+        "patiner":{
+            "present": {
+                "1s": "patine",
+                "2s": "patines",
+                "3s": "patine",
+                "1p": "patinons",
+                "2p": "patinez",
+                "3p": "patinent"
+            },
+            "passe": {
+                "1s": "ai patiné",
+                "2s": "as patiné",
+                "3s": "a patiné",
+                "1p": "avons patiné",
+                "2p": "avez patiné",
+                "3p": "ont patiné"
+            },
+            "futur": {
+                "1s": "patinerai",
+                "2s": "patineras",
+                "3s": "patinera",
+                "1p": "patinerons",
+                "2p": "patinerez",
+                "3p": "patineront"
+            }         
+        },
+        "grelotter": {
+            "present": {
+                "1s": "grelotte",
+                "2s": "grelottes",
+                "3s": "grelotte",
+                "1p": "grelottons",
+                "2p": "grelottez",
+                "3p": "grelottent"
+            },
+            "passe": {
+                "1s": "ai grelotté",
+                "2s": "as grelotté",
+                "3s": "a grelotté",
+                "1p": "avons grelotté",
+                "2p": "avez grelotté",
+                "3p": "ont grelotté"
+            },
+            "futur": {
+                "1s": "grelotterai",
+                "2s": "grelotteras",
+                "3s": "grelottera",
+                "1p": "grelotterons",
+                "2p": "grelotterez",
+                "3p": "grelotteront"
+            }
+        },
+        "souffler": {
+            "present": {
+                "1s": "souffle",
+                "2s": "souffles",
+                "3s": "souffle",
+                "1p": "soufflons",
+                "2p": "soufflez",
+                "3p": "soufflent"
+            },
+            "passe": {
+                "1s": "ai soufflé",
+                "2s": "as soufflé",
+                "3s": "a soufflé",
+                "1p": "avons soufflé",
+                "2p": "avez soufflé",
+                "3p": "ont soufflé"
+            },
+            "futur": {
+                "1s": "soufflerai",
+                "2s": "souffleras",
+                "3s": "soufflera",
+                "1p": "soufflerons",
+                "2p": "soufflerez",
+                "3p": "souffleront"
+            }
+        },
+        "hiberner": {
+            "present": {
+                "1s": "hiberne",
+                "2s": "hibernes",
+                "3s": "hiberne",
+                "1p": "hibernons",
+                "2p": "hibernez",
+                "3p": "hibernent"
+            },
+            "passe": {
+                "1s": "ai hiberné",
+                "2s": "as hiberné",
+                "3s": "a hiberné",
+                "1p": "avons hiberné",
+                "2p": "avez hiberné",
+                "3p": "ont hiberné"
+            },
+            "futur": {
+                "1s": "hibernerai",
+                "2s": "hiberneras",
+                "3s": "hibernera",
+                "1p": "hibernerons",
+                "2p": "hibernerez",
+                "3p": "hiberneront"
+            }
+        },
+        "frémir": {
+            "present": {
+                "1s": "frémis",
+                "2s": "frémis",
+                "3s": "frémit",
+                "1p": "frémissons",
+                "2p": "frémissez",
+                "3p": "frémissent"
+            },
+            "passe": {
+                "1s": "ai frémi",
+                "2s": "as frémi",
+                "3s": "a frémi",
+                "1p": "avons frémi",
+                "2p": "avez frémi",
+                "3p": "ont frémi"
+            },
+            "futur": {
+                "1s": "frémirai",
+                "2s": "frémiras",
+                "3s": "frémira",
+                "1p": "frémirons",
+                "2p": "frémirez",
+                "3p": "frémiront"
+            }
+        },
+        "dériver": {
+            "present": {
+                "1s": "dérive",
+                "2s": "dérives",
+                "3s": "dérive",
+                "1p": "dérivons",
+                "2p": "dérivez",
+                "3p": "dérivent"
+            },
+            "passe": {
+                "1s": "ai dérivé",
+                "2s": "as dérivé",
+                "3s": "a dérivé",
+                "1p": "avons dérivé",
+                "2p": "avez dérivé",
+                "3p": "ont dérivé"
+            },
+            "futur": {
+                "1s": "dériverai",
+                "2s": "dériveras",
+                "3s": "dériverea",
+                "1p": "dériverons",
+                "2p": "déréverez",
+                "3p": "dériveront"
+            }
+        },
+        "craquer": {
+            "present": {
+                "1s": "craque",
+                "2s": "craques",
+                "3s": "craque",
+                "1p": "craquons",
+                "2p": "craquez",
+                "3p": "craquent"
+            },
+            "passe": {
+                "1s": "ai craqué",
+                "2s": "as craqué",
+                "3s": "a craqué",
+                "1p": "avons craqué",
+                "2p": "avez craqué",
+                "3p": "ont craqué"
+            },
+            "futur": {
+                "1s": "craquerai",
+                "2s": "craqueras",
+                "3s": "craquera",
+                "1p": "craquerons",
+                "2p": "craquerez",
+                "3p": "craqueront"
+            }
+        },
+        "courir": {
+            "present": {
+                "1s": "cours",
+                "2s": "cours",
+                "3s": "court",
+                "1p": "courons",
+                "2p": "courez",
+                "3p": "courent"
+            },
+            "passe": {
+                "1s": "ai couru",
+                "2s": "as couru",
+                "3s": "a couru",
+                "1p": "avons couru",
+                "2p": "avez couru",
+                "3p": "ont couru"
+            },
+            "futur": {
+                "1s": "courrai",
+                "2s": "courras",
+                "3s": "courra",
+                "1p": "courrons",
+                "2p": "courrez",
+                "3p": "courront"
+            }
+        },
+        "éclater": {
+            "present": {
+                "1s": "éclate",
+                "2s": "éclates",
+                "3s": "éclate",
+                "1p": "éclatons",
+                "2p": "éclatez",
+                "3p": "éclatent"
+            },
+            "passe": {
+                "1s": "ai éclaté",
+                "2s": "as éclaté",
+                "3s": "a éclaté",
+                "1p": "avons éclaté",
+                "2p": "avez éclaté",
+                "3p": "ont éclaté"
+            },
+            "futur": {
+                "1s": "éclaterai",
+                "2s": "éclateras",
+                "3s": "éclatera",
+                "1p": "éclaterons",
+                "2p": "éclaterez",
+                "3p": "éclateront"
+            }
+        },
+        "gronder": {
+            "present": {
+                "1s": "gronde",
+                "2s": "grondes",
+                "3s": "gronde",
+                "1p": "grondons",
+                "2p": "grondez",
+                "3p": "grondent"
+            },
+            "passe": {
+                "1s": "ai grondé",
+                "2s": "as grondé",
+                "3s": "a grondé",
+                "1p": "avons grondé",
+                "2p": "avez grondé",
+                "3p": "ont grondé"
+            },
+            "futur": {
+                "1s": "gronderai",
+                "2s": "gronderas",
+                "3s": "grondera",
+                "1p": "gronderons",
+                "2p": "gronderez",
+                "3p": "gronderont"
+            }
+        },
+        "être": {
+            "present": {
+                "1s": "suis",
+                "2s": "es",
+                "3s": "est",
+                "1p": "sommes",
+                "2p": "êtes",
+                "3p": "sont"
+            },
+            "passe": {
+                "1s": "ai été",
+                "2s": "as été",
+                "3s": "a été",
+                "1p": "avons été",
+                "2p": "avez été",
+                "3p": "ont été"
+            },
+            "futur": {
+                "1s": "serai",
+                "2s": "seras",
+                "3s": "sera",
+                "1p": "serons",
+                "2p": "serez",
+                "3p": "seront"
+            }
+        },
+        "avoir": {
+            "present": {
+                "1s": "ai",
+                "2s": "as",
+                "3s": "a",
+                "1p": "avons",
+                "2p": "avez",
+                "3p": "ont"
+            },
+            "passe": {
+                "1s": "ai eu",
+                "2s": "as eu",
+                "3s": "a eu",
+                "1p": "avons eu",
+                "2p": "avez eu",
+                "3p": "ont eu"
+            },
+            "futur": {
+                "1s": "aurai",
+                "2s": "auras",
+                "3s": "aura",
+                "1p": "aurons",
+                "2p": "aurez",
+                "3p": "auront"
+            }
+        }                                  
+    }
+}
+
+
