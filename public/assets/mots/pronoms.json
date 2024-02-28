@@ -1,16 +1,6 @@
 {
     "personnels":{
         "singulier":{
-            "je": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "tu": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            },
             "il": {
                 "genre": "m",
                 "syllabes": 1,
@@ -28,16 +18,6 @@
             }
         },
         "pluriel":{
-            "nous": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "vous": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            },
             "ils": {
                 "genre": "m",
                 "syllabes": 1,
@@ -52,46 +32,6 @@
     },
     "possessifs":{
         "singulier":{
-            "mien": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "tien": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "sien": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "mienne": {
-                "genre": "f",
-                "syllabes": 2,
-                "liaison": 0
-            },
-            "tienne": {
-                "genre": "f",
-                "syllabes": 2,
-                "liaison": 0
-            },
-            "sienne": {
-                "genre": "f",
-                "syllabes": 2,
-                "liaison": 0
-            },
-            "nôtre": {
-                "genre": "i",
-                "syllabes": 2,
-                "liaison": 0
-            },
-            "vôtre": {
-                "genre": "i",
-                "syllabes": 2,
-                "liaison": 0
-            },
             "leur": {
                 "genre": "i",
                 "syllabes": 1,
@@ -99,29 +39,9 @@
             }
         },
         "pluriel": {
-            "miens": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "tiens": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
             "siens": {
                 "genre": "m",
                 "syllabes": 1,
-                "liaison": 0
-            },
-            "miennes": {
-                "genre": "f",
-                "syllabes": 2,
-                "liaison": 0
-            },
-            "tiennes": {
-                "genre": "f",
-                "syllabes": 2,
                 "liaison": 0
             },
             "siennes": {
