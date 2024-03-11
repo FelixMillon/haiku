@@ -140,6 +140,13 @@
             "pluriel": "cristaux",
             "liaison": 0
         },
+        "pierre":{
+            "themes":["mineral","paysage"],
+            "syllabes": 2,
+            "genre": "m",
+            "pluriel": "std",
+            "liaison": 0
+        },
         "gelure":{
             "themes":["meteo","froid"],
             "syllabes": 3,
@@ -291,6 +298,27 @@
             "themes":["mort","foyer"],
             "syllabes": 2,
             "genre": "f",
+            "pluriel": "std",
+            "liaison": 0
+        },
+        "nuit":{
+            "themes":["ciel","nuit","froid"],
+            "syllabes": 1,
+            "genre": "f",
+            "pluriel": "std",
+            "liaison": 0
+        },
+        "nuage":{
+            "themes":["ciel","meteo","froid"],
+            "syllabes": 2,
+            "genre": "m",
+            "pluriel": "std",
+            "liaison": 0
+        },
+        "orage":{
+            "themes":["ciel","meteo","froid","danger"],
+            "syllabes": 3,
+            "genre": "m",
             "pluriel": "std",
             "liaison": 0
         }

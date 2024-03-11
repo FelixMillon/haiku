@@ -27,7 +27,7 @@
                 "pluriel": "std"
             },
             "blanc":{
-                "themes":["paysage"],
+                "themes":["paysage","ciel","froid"],
                 "syllabes": 1,
                 "pluriel": "std"
             },
@@ -97,17 +97,17 @@
                 "pluriel": "std"
             },
             "étincelant":{
-                "themes":["paysage","mineral","froid"],
+                "themes":["paysage","mineral","froid","mer"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "silencieux":{
-                "themes":["mort","danger","paysage"],
+                "themes":["mort","danger","paysage","mer","temps"],
                 "syllabes": 3,
                 "pluriel": "silencieux"
             },
             "lumineux":{
-                "themes":["paysage","ciel","mineral"],
+                "themes":["paysage","ciel","mineral","temps"],
                 "syllabes": 3,
                 "pluriel": "lumineux"
             },
@@ -117,12 +117,12 @@
                 "pluriel": "std"
             },
             "envoûtant":{
-                "themes":["paysage","ciel","mineral"],
+                "themes":["paysage","ciel","mineral","mer"],
                 "syllabes": 3,
                 "pluriel": "std"
             },
             "serein":{
-                "themes":["paysage","ciel","mer","foyer"],
+                "themes":["paysage","ciel","nuit","mer","foyer"],
                 "syllabes": 2,
                 "pluriel": "std"
             },
@@ -147,7 +147,7 @@
                 "pluriel": "std"
             },
             "féroce":{
-                "themes":["animal"],
+                "themes":["animal","mer"],
                 "syllabes": 2,
                 "pluriel": "std"
             },
@@ -172,12 +172,12 @@
                 "pluriel": "gracieux"
             },
             "doux":{
-                "themes":["animal"],
+                "themes":["animal","foyer"],
                 "syllabes": 1,
                 "pluriel": "doux"
             },
             "noir":{
-                "themes":["mort","danger"],
+                "themes":["mort","danger","nuit","ciel"],
                 "syllabes": 1,
                 "pluriel": "std"
             },
@@ -199,6 +199,21 @@
             "fatal":{
                 "themes":["mort","danger"],
                 "syllabes": 2,
+                "pluriel": "std"
+            },
+            "vert":{
+                "themes":["vegetal"],
+                "syllabes": 1,
+                "pluriel": "std"
+            },
+            "brun":{
+                "themes":["animal","vegetal"],
+                "syllabes": 1,
+                "pluriel": "std"
+            },
+            "bleu":{
+                "themes":["mer","froid"],
+                "syllabes": 1,
                 "pluriel": "std"
             }
         },
@@ -299,17 +314,17 @@
                 "pluriel": "std"
             },
             "étincelante":{
-                "themes":["paysage","mineral","froid"],
+                "themes":["paysage","mineral","froid","mer"],
                 "syllabes": 5,
                 "pluriel": "std"
             },
             "silencieuse":{
-                "themes":["mort","danger","paysage"],
+                "themes":["mort","danger","paysage","mer","temps"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "lumineuse":{
-                "themes":["paysage","ciel","mineral"],
+                "themes":["paysage","ciel","mineral","temps"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
@@ -319,12 +334,12 @@
                 "pluriel": "std"
             },
             "envoûtante":{
-                "themes":["paysage","ciel","mineral"],
+                "themes":["paysage","ciel","mineral","mer"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "sereine":{
-                "themes":["paysage","ciel","mer","foyer"],
+                "themes":["paysage","ciel","nuit","mer","foyer"],
                 "syllabes": 3,
                 "pluriel": "std"
             },
@@ -349,7 +364,7 @@
                 "pluriel": "std"
             },
             "féroce":{
-                "themes":["animal"],
+                "themes":["animal","mer"],
                 "syllabes": 3,
                 "pluriel": "std"
             },
@@ -379,7 +394,7 @@
                 "pluriel": "std"
             },
             "noire":{
-                "themes":["mort","danger"],
+                "themes":["mort","danger","nuit","ciel"],
                 "syllabes": 1,
                 "pluriel": "std"
             },
@@ -401,6 +416,21 @@
             "fatale":{
                 "themes":["mort","danger"],
                 "syllabes": 2,
+                "pluriel": "std"
+            },
+            "verte":{
+                "themes":["vegetal"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "brune":{
+                "themes":["animal","vegetal"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "bleue":{
+                "themes":["mer","froid"],
+                "syllabes": 1,
                 "pluriel": "std"
             }
         }

@@ -76,14 +76,13 @@ export class HaikuController {
       //selectionner et conjuguer adjectif
       const adjectifInfo = this.selectAdjectif(theme, plurality, genre, sousThemes, syllabes)
       const selectedAdj = adjectifInfo["adj"]
-      const choosenTheme = adjectifInfo["choosenTheme"]
+      const choosenThemes = adjectifInfo["choosenThemes"]
       syllabes += adjectifInfo["syllabes"]
 
       let choosenVerbe = "";
       if(syllabes < 7){
         // ajouter un verbe*
-        choosenVerbe = this.chooseVerbe(theme, choosenTheme, plurality, syllabes)
-        console.log(choosenVerbe)
+        choosenVerbe = this.chooseVerbe(theme, choosenThemes, plurality, syllabes)
       }
       // placer la majuscule
       let vers = `${selectedPronom}`.charAt(0).toUpperCase();
@@ -96,6 +95,11 @@ export class HaikuController {
     const keys = Object.keys(obj);
     const randomIndex = Math.floor(Math.random() * keys.length);
     return keys[randomIndex];
+  }
+
+  private getRandomElement(unArray: string[]): string {
+    const randomIndex = Math.floor(Math.random() * unArray.length);
+    return unArray[randomIndex];
   }
 
   private selectName(theme: string, plurality: string, genre:string): string {
@@ -135,63 +139,72 @@ export class HaikuController {
     return {"conjugName": conjugName, "conjugPronom": conjugPronom}
   }
 
-  private selectAdjectif(theme: string, plurality: string, genre:string, themes:string[], nbSyllabes:number): object {
-    let selectedAdj = ""
+  private selectAdjectif(theme: string, plurality: string, genre:string, themes:string[], versSyllabes:number): object {
     let adjThemes: string[];
-    let syllabes = 0
-    let choosenTheme = ""
+    let selectedAdjs: string[] = [];
+    let adjSyllabes = 0
+    let selectedAdj = ""
+  
+    for( let adj in this.adjectifs[theme][genre]){
+      let adjTheme = this.adjectifs[theme][genre][adj]["themes"]
+      if(this.matchTheme(adjTheme, themes) != null){
+        selectedAdjs.push(adj)
+      }
+    }
+
     let security = 0
-    let finded = false;
-    while(!finded && security < 100){
-      selectedAdj = this.getRandomKey(this.adjectifs[theme][genre]);
+    while(security < 100){
+      selectedAdj = this.getRandomElement(selectedAdjs);
       adjThemes = this.adjectifs[theme][genre][selectedAdj]['themes']
-      choosenTheme = this.matchTheme(themes,adjThemes)
-      if(choosenTheme != null){
-        syllabes = this.adjectifs[theme][genre][selectedAdj]['syllabes']
-        if(plurality == 'pluriel'){
-          if(this.adjectifs[theme][genre][selectedAdj]['pluriel'] == 'std'){
-            selectedAdj += 's'
-          }else{
-            selectedAdj = this.adjectifs[theme][genre][selectedAdj]['pluriel'] 
-          }
-        }
-        if(syllabes + nbSyllabes > 7){
-          finded = false;
+      adjSyllabes = this.adjectifs[theme][genre][selectedAdj]['syllabes']
+      if(plurality == 'pluriel'){
+        if(this.adjectifs[theme][genre][selectedAdj]['pluriel'] == 'std'){
+          selectedAdj += 's'
         }else{
-          finded = true;
+          selectedAdj = this.adjectifs[theme][genre][selectedAdj]['pluriel'] 
         }
+      }
+      if(adjSyllabes + versSyllabes <= 7){
+        break;
       }
       security ++;
     }
-    if(syllabes + nbSyllabes > 7){
+    if(adjSyllabes + versSyllabes > 7){
       let liste_themes = "";
       for(let index in themes){
         liste_themes = liste_themes +";"+themes[index]
       }
-      console.log(`pas d'adjectifs de moins de ${(7-nbSyllabes).toString()} syllable(s) disponible pour le theme ${liste_themes}`)
+      console.log(`pas d'adjectifs de moins de ${(7-versSyllabes).toString()} syllable(s) disponible pour le theme ${liste_themes}`)
     }
     return {
       "adj":selectedAdj,
-      "syllabes": syllabes,
-      "choosenTheme": choosenTheme
+      "syllabes": adjSyllabes,
+      "choosenThemes": adjThemes
     };
   }
 
-  private chooseVerbe(theme: string, choosenTheme: string, plurality: string, verSyllabes: number):string{
+  private chooseVerbe(theme: string, choosenThemes: string[], plurality: string, verSyllabes: number):string{
     let security = 0
     const needed_syllabes = 7- verSyllabes
-    let choosenVerbe = ""
+    let selectedVerbe = "";
+    let conjuguedVerbe = ";"
+    let selectedVerbes: string[] = [];
+
+    for( let verbe in this.verbes[theme]){
+      let verbeTheme = this.verbes[theme][verbe]["themes"]
+      if(this.matchTheme(verbeTheme, choosenThemes) != null){
+        selectedVerbes.push(verbe);
+      }
+    }
+
     while(security < 200){
-      choosenVerbe = this.getRandomKey(this.verbes[theme]);
-      let verbeThemes = this.verbes[theme][choosenVerbe]['themes'];
-      if(verbeThemes.includes(choosenTheme)){
-        if(this.verbes[theme][choosenVerbe]['present']['3'+plurality.charAt(0)]['syllabes'] == needed_syllabes){
-          return this.verbes[theme][choosenVerbe]['present']['3'+plurality.charAt(0)]['value']
-        }
+      selectedVerbe = this.getRandomElement(selectedVerbes);
+      if(this.verbes[theme][selectedVerbe]['present']['3'+plurality.charAt(0)]['syllabes'] == needed_syllabes){
+        conjuguedVerbe =  this.verbes[theme][selectedVerbe]['present']['3'+plurality.charAt(0)]['value']
       }
       security ++;
     }
-    return choosenVerbe
+    return selectedVerbe
   }
 
   private matchTheme(theme1: string[], theme2: string[]): string | null{
