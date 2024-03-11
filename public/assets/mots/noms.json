@@ -134,7 +134,7 @@
             "liaison": 0
         },
         "cristal":{
-            "themes":["mineral"],
+            "themes":["mineral","froid"],
             "syllabes": 2,
             "genre": "m",
             "pluriel": "cristaux",
@@ -197,14 +197,14 @@
             "liaison": 0
         },
         "fourrure":{
-            "themes":["animal","vetement","froid"],
+            "themes":["animal","froid"],
             "syllabes": 3,
             "genre": "f",
             "pluriel": "std",
             "liaison": 0
         },
         "manteau":{
-            "themes":["paysage","vetement","froid"],
+            "themes":["paysage","froid"],
             "syllabes": 2,
             "genre": "m",
             "pluriel": "manteaux",

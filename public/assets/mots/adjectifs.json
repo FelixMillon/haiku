@@ -1,5 +1,207 @@
 {
     "hiver":{
+        "m":{
+            "glacial":{
+                "themes":["meteo","froid"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "neigeux":{
+                "themes":["meteo","froid","ciel","paysage"],
+                "syllabes": 2,
+                "pluriel": "neigeux"
+            },
+            "givré":{
+                "themes":["meteo","froid","paysage"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "gelé":{
+                "themes":["meteo","froid","paysage"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "hivernal":{
+                "themes":["meteo","froid","paysage"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "blanc":{
+                "themes":["paysage"],
+                "syllabes": 1,
+                "pluriel": "std"
+            },
+            "froid":{
+                "themes":["froid","meteo"],
+                "syllabes": 1,
+                "pluriel": "std"
+            },
+            "enneigé":{
+                "themes":["froid","meteo","paysage"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "verglacé":{
+                "themes":["froid","meteo","paysage"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "polaire":{
+                "themes":["froid","paysage"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "glacé":{
+                "themes":["froid"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "floconneux":{
+                "themes":["meteo","paysage","froid"],
+                "syllabes": 3,
+                "pluriel": "floconneux"
+            },
+            "brumeux":{
+                "themes":["meteo","ciel"],
+                "syllabes": 2,
+                "pluriel": "brumeux"
+            },
+            "tempêtueux":{
+                "themes":["meteo","ciel","froid","danger"],
+                "syllabes": 4,
+                "pluriel": "tempêtueux"
+            },
+            "venteux":{
+                "themes":["meteo","ciel"],
+                "syllabes": 2,
+                "pluriel": "venteux"
+            },
+            "scintillant":{
+                "themes":["paysage","mineral","froid"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "nacré":{
+                "themes":["paysage","mineral","froid"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "étoilé":{
+                "themes":["paysage","mineral","froid"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "féérique":{
+                "themes":["paysage","ciel"],
+                "syllabes": 4,
+                "pluriel": "std"
+            },
+            "étincelant":{
+                "themes":["paysage","mineral","froid"],
+                "syllabes": 4,
+                "pluriel": "std"
+            },
+            "silencieux":{
+                "themes":["mort","danger","paysage"],
+                "syllabes": 3,
+                "pluriel": "silencieux"
+            },
+            "lumineux":{
+                "themes":["paysage","ciel","mineral"],
+                "syllabes": 3,
+                "pluriel": "lumineux"
+            },
+            "magique":{
+                "themes":["paysage","ciel","mineral"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "envoûtant":{
+                "themes":["paysage","ciel","mineral"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "serein":{
+                "themes":["paysage","ciel","mer","foyer"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "chaleureux":{
+                "themes":["foyer"],
+                "syllabes": 3,
+                "pluriel": "chaleureux"
+            },
+            "confortable":{
+                "themes":["foyer"],
+                "syllabes": 4,
+                "pluriel": "std"
+            },
+            "douillet":{
+                "themes":["foyer"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "réconfortant":{
+                "themes":["foyer"],
+                "syllabes": 4,
+                "pluriel": "std"
+            },
+            "féroce":{
+                "themes":["animal"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "majestueux":{
+                "themes":["animal","vegetal"],
+                "syllabes": 4,
+                "pluriel": "majestueux"
+            },
+            "farouche":{
+                "themes":["animal"],
+                "syllabes": 3,
+                "pluriel": "std"
+            },
+            "agile":{
+                "themes":["animal"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "gracieux":{
+                "themes":["animal","vegetal"],
+                "syllabes": 3,
+                "pluriel": "gracieux"
+            },
+            "doux":{
+                "themes":["animal"],
+                "syllabes": 1,
+                "pluriel": "doux"
+            },
+            "noir":{
+                "themes":["mort","danger"],
+                "syllabes": 1,
+                "pluriel": "std"
+            },
+            "sournois":{
+                "themes":["mort","danger"],
+                "syllabes": 2,
+                "pluriel": "sournois"
+            },
+            "cruel":{
+                "themes":["mort","danger"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "mortel":{
+                "themes":["mort","danger"],
+                "syllabes": 2,
+                "pluriel": "std"
+            },
+            "fatal":{
+                "themes":["mort","danger"],
+                "syllabes": 2,
+                "pluriel": "std"
+            }
+        },
         "f":{
             "glaciale":{
                 "themes":["meteo","froid"],
@@ -23,7 +225,7 @@
             },
             "hivernale":{
                 "themes":["meteo","froid","paysage"],
-                "syllabes": 4,
+                "syllabes": 3,
                 "pluriel": "std"
             },
             "blanche":{
@@ -77,52 +279,52 @@
                 "pluriel": "std"
             },
             "scintillante":{
-                "themes":["paysage","mineral","froid","beau"],
+                "themes":["paysage","mineral","froid"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "nacrée":{
-                "themes":["paysage","mineral","beau"],
+                "themes":["paysage","mineral","froid"],
                 "syllabes": 2,
                 "pluriel": "std"
             },
             "étoilée":{
-                "themes":["paysage","mineral","froid","beau"],
+                "themes":["paysage","mineral","froid"],
                 "syllabes": 3,
                 "pluriel": "std"
             },
             "féérique":{
-                "themes":["paysage","beau"],
+                "themes":["paysage","ciel"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "étincelante":{
-                "themes":["paysage","mineral","beau"],
+                "themes":["paysage","mineral","froid"],
                 "syllabes": 5,
                 "pluriel": "std"
             },
             "silencieuse":{
-                "themes":["mort","peur"],
+                "themes":["mort","danger","paysage"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "lumineuse":{
-                "themes":["paysage","ciel","mineral","beau"],
+                "themes":["paysage","ciel","mineral"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "magique":{
-                "themes":["paysage","ciel","mineral","beau"],
+                "themes":["paysage","ciel","mineral"],
                 "syllabes": 3,
                 "pluriel": "std"
             },
             "envoûtante":{
-                "themes":["paysage","ciel","mineral","beau"],
+                "themes":["paysage","ciel","mineral"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
             "sereine":{
-                "themes":["paysage","ciel","beau","foyer"],
+                "themes":["paysage","ciel","mer","foyer"],
                 "syllabes": 3,
                 "pluriel": "std"
             },
@@ -152,7 +354,7 @@
                 "pluriel": "std"
             },
             "majestueuse":{
-                "themes":["animal"],
+                "themes":["animal","vegetal"],
                 "syllabes": 5,
                 "pluriel": "std"
             },
@@ -167,7 +369,7 @@
                 "pluriel": "std"
             },
             "gracieuse":{
-                "themes":["animal"],
+                "themes":["animal","vegetal"],
                 "syllabes": 4,
                 "pluriel": "std"
             },
@@ -175,183 +377,31 @@
                 "themes":["animal"],
                 "syllabes": 2,
                 "pluriel": "std"
-            }
-        },
-        "m":{
-            "glacial":{
-                "themes":["meteo","froid"],
-                "syllabes": 2,
-                "pluriel": "std"
             },
-            "neigeux":{
-                "themes":["meteo","froid","ciel","paysage"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "givré":{
-                "themes":["meteo","froid","paysage"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "gelé":{
-                "themes":["meteo","froid","paysage"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "hivernal":{
-                "themes":["meteo","froid","paysage"],
-                "syllabes": 4,
-                "pluriel": "std"
-            },
-            "blanc":{
-                "themes":["paysage"],
+            "noire":{
+                "themes":["mort","danger"],
                 "syllabes": 1,
                 "pluriel": "std"
             },
-            "froid":{
-                "themes":["froid","meteo"],
-                "syllabes": 1,
-                "pluriel": "std"
-            },
-            "enneigé":{
-                "themes":["froid","meteo","paysage"],
+            "sournoise":{
+                "themes":["mort","danger"],
                 "syllabes": 3,
                 "pluriel": "std"
             },
-            "verglacé":{
-                "themes":["froid","meteo","paysage"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "polaire":{
-                "themes":["froid","paysage"],
+            "cruelle":{
+                "themes":["mort","danger"],
                 "syllabes": 2,
                 "pluriel": "std"
             },
-            "glacée":{
-                "themes":["froid"],
+            "mortelle":{
+                "themes":["mort","danger"],
                 "syllabes": 2,
                 "pluriel": "std"
             },
-            "floconneux":{
-                "themes":["meteo","paysage","froid"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "brumeux":{
-                "themes":["meteo","ciel"],
+            "fatale":{
+                "themes":["mort","danger"],
                 "syllabes": 2,
                 "pluriel": "std"
-            },
-            "tempêtueux":{
-                "themes":["meteo","ciel","froid","danger"],
-                "syllabes": 4,
-                "pluriel": "std"
-            },
-            "venteux":{
-                "themes":["meteo","ciel"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "scintillant":{
-                "themes":["paysage","mineral","froid","beau"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "nacré":{
-                "themes":["paysage","mineral","beau"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "étoilé":{
-                "themes":["paysage","mineral","froid","beau"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "féérique":{
-                "themes":["paysage","beau"],
-                "syllabes": 4,
-                "pluriel": "std"
-            },
-            "étincelant":{
-                "themes":["paysage","mineral","beau"],
-                "syllabes": 4,
-                "pluriel": "std"
-            },
-            "silencieux":{
-                "themes":["mort","peur"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "lumineux":{
-                "themes":["paysage","ciel","mineral","beau"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "magique":{
-                "themes":["paysage","ciel","mineral","beau"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "envoûtant":{
-                "themes":["paysage","ciel","mineral","beau"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "serein":{
-                "themes":["paysage","ciel","beau","foyer"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "chaleureux":{
-                "themes":["foyer"],
-                "syllabes": 3,
-                "pluriel": "Chaleureux"
-            },
-            "confortable":{
-                "themes":["foyer"],
-                "syllabes": 4,
-                "pluriel": "std"
-            },
-            "douillet":{
-                "themes":["foyer"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "réconfortant":{
-                "themes":["foyer"],
-                "syllabes": 4,
-                "pluriel": "std"
-            },
-            "féroce":{
-                "themes":["animal"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "majestueux":{
-                "themes":["animal"],
-                "syllabes": 4,
-                "pluriel": "majestueux"
-            },
-            "farouche":{
-                "themes":["animal"],
-                "syllabes": 3,
-                "pluriel": "std"
-            },
-            "agile":{
-                "themes":["animal"],
-                "syllabes": 2,
-                "pluriel": "std"
-            },
-            "gracieux":{
-                "themes":["animal"],
-                "syllabes": 2,
-                "pluriel": "gracieux"
-            },
-            "doux":{
-                "themes":["animal"],
-                "syllabes": 1,
-                "pluriel": "doux"
             }
         }
     }

@@ -74,10 +74,21 @@ export class HaikuController {
       }
 
       //selectionner et conjuguer adjectif
-      const adjectifInfo = this.selectAdjectif(theme, plurality, genre, sousThemes)
+      const adjectifInfo = this.selectAdjectif(theme, plurality, genre, sousThemes, syllabes)
       const selectedAdj = adjectifInfo["adj"]
+      const choosenTheme = adjectifInfo["choosenTheme"]
       syllabes += adjectifInfo["syllabes"]
-      return `${selectedPronom}${liaison}${selectedName} ${selectedAdj} : ${syllabes}`
+
+      let choosenVerbe = "";
+      if(syllabes < 7){
+        // ajouter un verbe*
+        choosenVerbe = this.chooseVerbe(theme, choosenTheme, plurality, syllabes)
+        console.log(choosenVerbe)
+      }
+      // placer la majuscule
+      let vers = `${selectedPronom}`.charAt(0).toUpperCase();
+      vers += `${selectedPronom}${liaison}${selectedName} ${selectedAdj} : ${syllabes} ! ${choosenVerbe}`.slice(1);
+      return vers;
     }
   }
 
@@ -93,6 +104,7 @@ export class HaikuController {
     let selectedName = ""
     while(!finded && security < 100){
       selectedName = this.getRandomKey(this.noms[theme]);
+      // a revoir
       if(this.noms[theme][selectedName]['pluriel'] == 'idnb' && plurality == 'singulier'){
         if(this.noms[theme][selectedName]['genre'] == genre){
           finded = true;
@@ -123,25 +135,18 @@ export class HaikuController {
     return {"conjugName": conjugName, "conjugPronom": conjugPronom}
   }
 
-  private selectAdjectif(theme: string, plurality: string, genre:string, themes:string[]): object {
-    let security = 0
-    let finded = false;
+  private selectAdjectif(theme: string, plurality: string, genre:string, themes:string[], nbSyllabes:number): object {
     let selectedAdj = ""
     let adjThemes: string[];
-    let matchThemes = false
     let syllabes = 0
+    let choosenTheme = ""
+    let security = 0
+    let finded = false;
     while(!finded && security < 100){
       selectedAdj = this.getRandomKey(this.adjectifs[theme][genre]);
       adjThemes = this.adjectifs[theme][genre][selectedAdj]['themes']
-      console.log(adjThemes)
-      console.log(themes)
-      for(let index in themes){
-        if(adjThemes.includes(themes[index])){
-          matchThemes = true
-          console.log(themes[index])
-        }
-      }
-      if(matchThemes){
+      choosenTheme = this.matchTheme(themes,adjThemes)
+      if(choosenTheme != null){
         syllabes = this.adjectifs[theme][genre][selectedAdj]['syllabes']
         if(plurality == 'pluriel'){
           if(this.adjectifs[theme][genre][selectedAdj]['pluriel'] == 'std'){
@@ -150,13 +155,53 @@ export class HaikuController {
             selectedAdj = this.adjectifs[theme][genre][selectedAdj]['pluriel'] 
           }
         }
-        finded = true;
+        if(syllabes + nbSyllabes > 7){
+          finded = false;
+        }else{
+          finded = true;
+        }
       }
       security ++;
     }
+    if(syllabes + nbSyllabes > 7){
+      let liste_themes = "";
+      for(let index in themes){
+        liste_themes = liste_themes +";"+themes[index]
+      }
+      console.log(`pas d'adjectifs de moins de ${(7-nbSyllabes).toString()} syllable(s) disponible pour le theme ${liste_themes}`)
+    }
     return {
       "adj":selectedAdj,
-      "syllabes": syllabes
+      "syllabes": syllabes,
+      "choosenTheme": choosenTheme
     };
+  }
+
+  private chooseVerbe(theme: string, choosenTheme: string, plurality: string, verSyllabes: number):string{
+    let security = 0
+    const needed_syllabes = 7- verSyllabes
+    let choosenVerbe = ""
+    while(security < 200){
+      choosenVerbe = this.getRandomKey(this.verbes[theme]);
+      let verbeThemes = this.verbes[theme][choosenVerbe]['themes'];
+      if(verbeThemes.includes(choosenTheme)){
+        if(this.verbes[theme][choosenVerbe]['present']['3'+plurality.charAt(0)]['syllabes'] == needed_syllabes){
+          return this.verbes[theme][choosenVerbe]['present']['3'+plurality.charAt(0)]['value']
+        }
+      }
+      security ++;
+    }
+    return choosenVerbe
+  }
+
+  private matchTheme(theme1: string[], theme2: string[]): string | null{
+    let choosenTheme = null
+    for(let index in theme1){
+      if(theme2.includes(theme1[index])){
+        choosenTheme = theme1[index];
+        return choosenTheme
+      }
+    }
+    return null
   }
 }
