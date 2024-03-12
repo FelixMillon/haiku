@@ -1,101 +1,100 @@
 {
-    "personnels":{
-        "singulier":{
-            "il": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "elle": {
-                "genre": "f",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "on": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            }
-        },
-        "pluriel":{
-            "ils": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "elles": {
-                "genre": "f",
-                "syllabes": 1,
-                "liaison": 0
-            }
-        }
+  "personnels": {
+    "singulier": {
+      "il": {
+        "genre": "m",
+        "syllabes": 1,
+        "liaison": 0
+      },
+      "elle": {
+        "genre": "f",
+        "syllabes": 1,
+        "liaison": 0
+      },
+      "on": {
+        "genre": "i",
+        "syllabes": 1,
+        "liaison": 0
+      }
     },
-    "possessifs":{
-        "singulier":{
-            "leur": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            }
-        },
-        "pluriel": {
-            "siens": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "siennes": {
-                "genre": "f",
-                "syllabes": 2,
-                "liaison": 0
-            },
-            "nos": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "vos": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            },
-            "leurs": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            }
-        }
-    },
-    "demonstratif":{
-        "singulier":{
-            "ce": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": "cet"
-            },
-            "cette": {
-                "genre": "f",
-                "syllabes": 2,
-                "liaison": 0
-            },
-            "le": {
-                "genre": "m",
-                "syllabes": 1,
-                "liaison": "l'"
-            },
-            "la": {
-                "genre": "f",
-                "syllabes": 1,
-                "liaison": "l'"
-            }
-        },
-        "pluriel":{
-            "ces": {
-                "genre": "i",
-                "syllabes": 1,
-                "liaison": 0
-            }
-        }
+    "pluriel": {
+      "ils": {
+        "genre": "m",
+        "syllabes": 1,
+        "liaison": 0
+      },
+      "elles": {
+        "genre": "f",
+        "syllabes": 1,
+        "liaison": 0
+      }
     }
-
+  },
+  "possessifs": {
+    "singulier": {
+      "leur": {
+        "genre": "i",
+        "syllabes": 1,
+        "liaison": 0
+      }
+    },
+    "pluriel": {
+      "siens": {
+        "genre": "m",
+        "syllabes": 1,
+        "liaison": 0
+      },
+      "siennes": {
+        "genre": "f",
+        "syllabes": 2,
+        "liaison": 0
+      },
+      "nos": {
+        "genre": "i",
+        "syllabes": 1,
+        "liaison": 0
+      },
+      "vos": {
+        "genre": "i",
+        "syllabes": 1,
+        "liaison": 0
+      },
+      "leurs": {
+        "genre": "i",
+        "syllabes": 1,
+        "liaison": 0
+      }
+    }
+  },
+  "demonstratif": {
+    "singulier": {
+      "ce": {
+        "genre": "m",
+        "syllabes": 1,
+        "liaison": "cet"
+      },
+      "cette": {
+        "genre": "f",
+        "syllabes": 2,
+        "liaison": 0
+      },
+      "le": {
+        "genre": "m",
+        "syllabes": 1,
+        "liaison": "l'"
+      },
+      "la": {
+        "genre": "f",
+        "syllabes": 1,
+        "liaison": "l'"
+      }
+    },
+    "pluriel": {
+      "ces": {
+        "genre": "i",
+        "syllabes": 1,
+        "liaison": 0
+      }
+    }
+  }
 }

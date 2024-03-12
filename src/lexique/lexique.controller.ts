@@ -159,7 +159,7 @@ export class LexiqueController {
     this.checkIsValidPronom(body)
     return this.lexiqueService.createPronom(type,plurality,pronom,body);
   }
-  @Delete('noms/:theme/:nom')
+  @Delete('pronoms/:type/:plurality/:pronom')
   deletePronom(
     @Param('type') type: string,
     @Param('plurality') plurality: string,
