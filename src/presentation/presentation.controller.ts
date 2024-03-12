@@ -14,7 +14,7 @@ export class PresentationController {
     const templatePath = path.resolve(__dirname, '../../../public/assets/views/presentation.hbs');
     const template = fs.readFileSync(templatePath, 'utf8');
     const compiledTemplate = handlebars.compile(template);
-    const renderedHtml = compiledTemplate({ prenom: 'tata' });
+    const renderedHtml = compiledTemplate({ prenom: 'test' });
 
     res.set({ 'content-type': 'text/html' }).send(renderedHtml);
   }

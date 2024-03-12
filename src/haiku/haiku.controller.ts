@@ -96,7 +96,7 @@ export class HaikuController {
         vers += `${selectedPronom}${liaison}${selectedName} ${selectedAdj} ${conjuguedVerbe}`.slice(1);
         poeme = poeme + vers +'<br>'
       }
-      return poeme;
+      return poeme + '<br><br><a href="/">accueil</a>';
     }
   }
 
