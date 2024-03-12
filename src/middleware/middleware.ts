@@ -1,7 +1,7 @@
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
 import {updateJson} from '../bdd/manage_json';
-import * as logs from '../../public/logs/logs.json'; 
+import * as logs from '../../public/jsonlogs/jsonlogs.json'; 
 @Injectable()
 export class HaikuMiddleware implements NestMiddleware {
   use(req: Request, res: Response, next: NextFunction) {
@@ -12,11 +12,11 @@ export class HaikuMiddleware implements NestMiddleware {
       },
       'res': {
         "code": res.statusCode,
-        "msg": res.statusMessage
+        "message": res.json
       }
     }
     logs["logs"].push(interaction)
-    updateJson('./public/logs/logs.json',logs);
+    updateJson('./public/jsonlogs/jsonlogs.json',logs);
     next();
   }
 }
