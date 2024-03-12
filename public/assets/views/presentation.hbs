@@ -3,34 +3,93 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ma Page HTML</title>
-    <style>
-        /* Ajoutez ici vos styles CSS */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 5px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        h1 {
-            color: #333;
-        }
-    </style>
 </head>
 <body>
     <div class="container">
-        <h1>Ma Page HTML</h1>
-        <div>Bonjour {{prenom}}</div>
-        <p>Bienvenue sur ma page HTML de base .</p>
-        <p>Vous pouvez ajouter du contenu supplémentaire ici.</p>
+        <h1>{{ nom }}</h1>
+        <div>Bonjour</div>
+        <p>Bienvenue sur {{ nom }}</p>
+        <p>Fonctionnalités</p>
+        <div class="container">
+            <h2>Generation d'un haiku</h2>
+            <a href="/haiku/printemps/">printemps</a><br>
+            <a href="/haiku/ete/">ete</a><br>
+            <a href="/haiku/automne/">automne</a><br>
+            <a href="/haiku/hiver/">hiver</a>
+        </div>
+        <div class="container">
+            <h2>Gestion du lexique</h2>
+            <a href="/lexique/noms/">noms</a><br>
+            <a href="/lexique/pronoms/">pronoms</a><br>
+            <a href="/lexique/adjectifs/">adjectifs</a><br>
+            <a href="/lexique/verbes/">verbes</a><br>
+        </div>
+        <div class="container">
+            <h2>Endpoints</h2>
+            <div class="container">
+                <h3>Haiku</h3>
+                <p>/haiku/&lt;<span class="highlight">theme</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+            </div>
+            <div class="container">
+                <h3>Lexique</h3>
+                <div class="container">
+                    <h4>noms</h4>
+                    <p>/lexique/noms/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/noms/&lt;<span class="highlight">theme</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/noms/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">nom</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/noms/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">nom</span>&gt;/  <span class="highlightVerbe">POST</span></p>
+                    <p>/lexique/noms/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">nom</span>&gt;/  <span class="highlightVerbe">PUT</span></p>
+                    <p>/lexique/noms/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">nom</span>&gt;/  <span class="highlightVerbe">DELETE</span></p>
+                    <h4>pronoms</h4>
+                    <p>/lexique/pronoms/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/pronoms/&lt;<span class="highlight">type</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/pronoms/&lt;<span class="highlight">type</span>&gt;/&lt;<span class="highlight">plurality</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/pronoms/&lt;<span class="highlight">type</span>&gt;/&lt;<span class="highlight">plurality</span>&gt;/&lt;<span class="highlight">pronom</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/pronoms/&lt;<span class="highlight">type</span>&gt;/&lt;<span class="highlight">plurality</span>&gt;/&lt;<span class="highlight">pronom</span>&gt;/  <span class="highlightVerbe">POST</span></p>
+                    <p>/lexique/pronoms/&lt;<span class="highlight">type</span>&gt;/&lt;<span class="highlight">plurality</span>&gt;/&lt;<span class="highlight">pronom</span>&gt;/  <span class="highlightVerbe">PUT</span></p>
+                    <p>/lexique/pronoms/&lt;<span class="highlight">type</span>&gt;/&lt;<span class="highlight">plurality</span>&gt;/&lt;<span class="highlight">pronom</span>&gt;/  <span class="highlightVerbe">DELETE</span></p>
+                    <h4>adjectifs</h4>
+                    <p>/lexique/adjectifs/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/adjectifs/&lt;<span class="highlight">theme</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/adjectifs/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">genre</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/adjectifs/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">genre</span>&gt;/&lt;<span class="highlight">adjectif</span>&gt;/  <span class="highlightVerbe">GET</span></p>
+                    <p>/lexique/adjectifs/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">genre</span>&gt;/&lt;<span class="highlight">adjectif</span>&gt;/  <span class="highlightVerbe">POST</span></p>
+                    <p>/lexique/adjectifs/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">genre</span>&gt;/&lt;<span class="highlight">adjectif</span>&gt;/  <span class="highlightVerbe">PUT</span></p>
+                    <p>/lexique/adjectifs/&lt;<span class="highlight">theme</span>&gt;/&lt;<span class="highlight">genre</span>&gt;/&lt;<span class="highlight">adjectif</span>&gt;/  <span class="highlightVerbe">DELETE</span></p>
+                </div>
+            </div>
+
+        </div>
+
+        <a href="/">accueil</a>
     </div>
+    
 </body>
 </html>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        max-width: 800px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .highlight {
+        font-weight: bold;
+        color: red;
+    }
+    .highlightVerbe {
+        font-weight: bold;
+        color: green;
+    }
+    h1 {
+        color: #333;
+    }
+</style>

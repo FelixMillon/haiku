@@ -1,6 +1,9 @@
 import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { LexiqueService } from './lexique.service';
 import { Nom } from '../types/nom';
+import { Pronom } from '../types/pronom';
+import { Adjectif } from '../types/adjectif';
+import { Verbe } from '../types/verbe';
 @Controller('lexique')
 export class LexiqueController {
   constructor(private readonly lexiqueService: LexiqueService) {}
@@ -20,15 +23,20 @@ export class LexiqueController {
     return this.lexiqueService.getNomsByTheme(theme);
   }
   @Get('noms/:theme/:nom')
-  getNomsByThemeAndName(@Param('theme') theme: string,@Param('nom') nom: string): object {
+  getNom(@Param('theme') theme: string,@Param('nom') nom: string): object {
+    if(!(typeof nom === 'string')){
+      throw new Error("nom doit être une chaine de caractere")
+    }
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
     }
-    return this.lexiqueService.getNomsByThemeAndName(theme,nom); 
+    return this.lexiqueService.getNom(theme,nom); 
   }
   @Post('noms/:theme/:nom')
   createNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
-    
+    if(!(typeof nom === 'string')){
+      throw new Error("nom doit être une chaine de caractere")
+    }
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
     }
@@ -41,6 +49,9 @@ export class LexiqueController {
   }
   @Put('noms/:theme/:nom')
   updateNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
+    if(!(typeof nom === 'string')){
+      throw new Error("nom doit être une chaine de caractere")
+    }
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
     }
@@ -53,6 +64,9 @@ export class LexiqueController {
   }
   @Delete('noms/:theme/:nom')
   deleteNom(@Param('theme') theme: string,@Param('nom') nom: string) {
+    if(!(typeof nom === 'string')){
+      throw new Error("nom doit être une chaine de caractere")
+    }
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
     }
@@ -85,14 +99,89 @@ export class LexiqueController {
     return this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
   }
   @Get('pronoms/:type/:plurality/:pronom')
-  getPronomsByTypeAndPluralityAndPronom(@Param('type') type: string,@Param('plurality') plurality: string,@Param('pronom') pronom: string): object {
+  getPronom(@Param('type') type: string,@Param('plurality') plurality: string,@Param('pronom') pronom: string): object {
+    if(!(typeof pronom === 'string')){
+      throw new Error("pronom doit être une chaine de caractere")
+    }
     if(!this.authorizedTypes.includes(type)){
       throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
     }
     if(!this.authorizedPlurality.includes(plurality)){
       throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
     }
-    return this.lexiqueService.getPronomsByTypeAndPluralityAndPronom(type,plurality,pronom);
+    return this.lexiqueService.getPronom(type,plurality,pronom);
+  }
+  @Post('pronoms/:type/:plurality/:pronom')
+  createPronom(
+      @Body() body: Pronom,
+      @Param('type') type: string,
+      @Param('plurality') plurality: string,
+      @Param('pronom') pronom: string
+    ) {
+    if(!(typeof pronom === 'string')){
+      throw new Error("pronom doit être une chaine de caractere")
+    }
+    if(!this.authorizedTypes.includes(type)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+    }
+    if(!this.authorizedPlurality.includes(plurality)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+    }
+    const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
+    if(pronom in pronomsExistants){
+      throw new Error("le pronom existe déja")
+    }
+    this.checkIsValidPronom(body)
+    return this.lexiqueService.createPronom(type,plurality,pronom,body);
+  }
+  @Put('pronoms/:type/:plurality/:pronom')
+  updatePronom(
+      @Body() body: Pronom,
+      @Param('type') type: string,
+      @Param('plurality') plurality: string,
+      @Param('pronom') pronom: string
+    ) {
+    if(!(typeof pronom === 'string')){
+      throw new Error("pronom doit être une chaine de caractere")
+    }
+    if(!this.authorizedTypes.includes(type)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+    }
+    if(!this.authorizedPlurality.includes(plurality)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+    }
+    const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
+    if(!(pronom in pronomsExistants)){
+      throw new Error("le pronom n'existe pas")
+    }
+    this.checkIsValidPronom(body)
+    return this.lexiqueService.createPronom(type,plurality,pronom,body);
+  }
+  @Delete('noms/:theme/:nom')
+  deletePronom(
+    @Param('type') type: string,
+    @Param('plurality') plurality: string,
+    @Param('pronom') pronom: string
+  ) {
+    if(!(typeof pronom === 'string')){
+      throw new Error("pronom doit être une chaine de caractere")
+    }
+    if(!this.authorizedTypes.includes(type)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+    }
+    if(!this.authorizedPlurality.includes(plurality)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+    }
+    const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
+    if(!(pronom in pronomsExistants)){
+      throw new Error("le pronom existe déja")
+    }
+    return this.lexiqueService.deletePronom(type,plurality,pronom);
+  }
+
+  @Get('adjectifs')
+  getAdjectifs(): object {
+    return this.lexiqueService.getAdjectifs();
   }
   @Get('adjectifs/:theme')
   getAdjectifsByTheme(@Param('theme') theme: string): object {
@@ -112,28 +201,115 @@ export class LexiqueController {
     return this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
   }
   @Get('adjectifs/:theme/:genre/:adjectif')
-  getAdjectifsByThemeAndGenreAndAdjectif(@Param('theme') theme: string,@Param('genre') genre: string,@Param('adjectif') adjectif: string): object {
+  getAdjectif(@Param('theme') theme: string,@Param('genre') genre: string,@Param('adjectif') adjectif: string): object {
+    if(!(typeof adjectif === 'string')){
+      throw new Error("adjectif doit être une chaine de caractere")
+    }
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
     }
     if(!this.authorizedGenre.includes(genre)){
       throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
     }
-    return this.lexiqueService.getAdjectifsByThemeAndGenreAndAdjectif(theme,genre,adjectif);
+    return this.lexiqueService.getAdjectif(theme,genre,adjectif);
   }
-  @Get('adjectifs')
-  getAdjectifs(): object {
-    return this.lexiqueService.getAdjectifs();
+  @Post('adjectifs/:theme/:genre/:adjectif')
+  createAdjectif(
+    @Body() body: Adjectif,
+    @Param('theme') theme: string,
+    @Param('genre') genre: string,
+    @Param('adjectif') adjectif: string
+  ) {
+    if(!(typeof adjectif === 'string')){
+      throw new Error("adjectif doit être une chaine de caractere")
+    }
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    if(!this.authorizedGenre.includes(genre)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+    }
+    const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
+    if(adjectif in adjectifsExistants){
+      throw new Error("l'adjectif existe déja")
+    }
+    this.checkIsValidAdjectif(body)
+    return this.lexiqueService.createAdjectif(theme,genre,adjectif,body);
   }
+  @Put('adjectifs/:theme/:genre/:adjectif')
+  updateAdjectif(
+    @Body() body: Adjectif,
+    @Param('theme') theme: string,
+    @Param('genre') genre: string,
+    @Param('adjectif') adjectif: string
+  ) {
+    if(!(typeof adjectif === 'string')){
+      throw new Error("adjectif doit être une chaine de caractere")
+    }
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    if(!this.authorizedGenre.includes(genre)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+    }
+    const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
+    if(!(adjectif in adjectifsExistants)){
+      throw new Error("l'adjectif n'existe pas")
+    }
+    this.checkIsValidAdjectif(body)
+    return this.lexiqueService.createAdjectif(theme,genre,adjectif,body);
+  }
+  @Delete('adjectifs/:theme/:genre/:adjectif')
+  deleteAdjectif(
+    @Param('theme') theme: string,
+    @Param('genre') genre: string,
+    @Param('adjectif') adjectif: string
+  ) {
+    if(!(typeof adjectif === 'string')){
+      throw new Error("adjectif doit être une chaine de caractere")
+    }
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    if(!this.authorizedGenre.includes(genre)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+    }
+    const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
+    if(!(adjectif in adjectifsExistants)){
+      throw new Error("l'adjectif n'existe pas")
+    }
+    return this.lexiqueService.deleteAdjectif(theme,genre,adjectif);
+  }
+
   @Get('verbes')
   getVerbes(): object {
     return this.lexiqueService.getVerbes();
   }
+  @Get('verbes/:theme')
+  getVerbesByTheme(@Param('theme') theme: string): object {
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    return this.lexiqueService.getVerbesByTheme(theme);
+  }
+  @Get('verbes/:theme/:verbe')
+  getVerbe(
+    @Param('theme') theme: string,
+    @Param('verbe') verbe: string
+  ): object {
+    if(!(typeof verbe === 'string')){
+      throw new Error("verbe doit être une chaine de caractere")
+    }
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    return this.lexiqueService.getVerbe(theme,verbe);
+  }
+
   @Get()
   getPrez(): string {
     return `
     <a href="/lexique/noms/">/lexique/noms/</a><br>
-    <a href="/lexique/noms/<theme>/">/lexique/noms/<theme>/</a><br>
     <a href="/lexique/pronoms/">/lexique/pronoms/</a><br>
     <a href="/lexique/adjectifs/">/lexique/adjectifs/</a><br>
     <a href="/lexique/verbes/">/lexique/verbes/</a><br>
@@ -163,6 +339,36 @@ export class LexiqueController {
     }
     if(!["f","m"].includes(body['genre'])){
       throw new Error("liaison doit être égale à 1 ou 0")
+    }
+  }
+  checkIsValidPronom(body: Pronom): void{
+    if(!Number.isInteger(body['syllabes'])){
+      throw new Error("syllabes doit être un entier")
+    }
+    if(![0,1].includes(body['liaison'])){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+    if(!["f","m","i"].includes(body['genre'])){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+  }
+  checkIsValidAdjectif(body: Adjectif): void{
+    if(!(typeof body['pluriel'] === 'string')){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+    if(!Number.isInteger(body['syllabes'])){
+      throw new Error("syllabes doit être un entier")
+    }
+    if(!(typeof body['themes'] === 'object')){
+      throw new Error("liaison doit être une liste")
+    }
+    for(let index in body['themes']){
+      if(!Number.isInteger(parseInt(index))){
+        throw new Error("liaison doit être une liste")
+      }
+      if(!(typeof body['themes'][index] === 'string')){
+        throw new Error("Chaque thème doit être une chaine de caractère")
+      }
     }
   }
 }
