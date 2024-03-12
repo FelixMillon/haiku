@@ -176,7 +176,7 @@ export class LexiqueController {
     }
     const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
     if(!(pronom in pronomsExistants)){
-      throw new Error("le pronom existe déja")
+      throw new Error("le pronom n'existe pas")
     }
     return this.lexiqueService.deletePronom(type,plurality,pronom);
   }
@@ -405,8 +405,8 @@ export class LexiqueController {
     if(!Number.isInteger(body['syllabes'])){
       throw new Error("syllabes doit être un entier")
     }
-    if(body['syllabes']<1){
-      throw new Error("syllabes doit être supérieur à 0")
+    if(body['syllabes']<0){
+      throw new Error("syllabes doit être supérieur ou égale à 0")
     }
     if(![0,1].includes(body['liaison'])){
       throw new Error("liaison doit être égale à 1 ou 0")
@@ -477,7 +477,7 @@ export class LexiqueController {
     if(!Number.isInteger(personne['syllabes'])){
       throw new Error("syllabes doit être un entier")
     }
-    if(personne['syllabes']<1){
+    if(personne['syllabes'] <= 0){
       throw new Error("syllabes doit être supérieur à 0")
     }
   }
