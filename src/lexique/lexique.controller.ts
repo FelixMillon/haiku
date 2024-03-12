@@ -377,6 +377,9 @@ export class LexiqueController {
     if(!Number.isInteger(body['syllabes'])){
       throw new Error("syllabes doit être un entier")
     }
+    if(body['syllabes']<1){
+      throw new Error("syllabes doit être supérieur à 0")
+    }
     if(![0,1].includes(body['liaison'])){
       throw new Error("liaison doit être égale à 1 ou 0")
     }
@@ -402,6 +405,9 @@ export class LexiqueController {
     if(!Number.isInteger(body['syllabes'])){
       throw new Error("syllabes doit être un entier")
     }
+    if(body['syllabes']<1){
+      throw new Error("syllabes doit être supérieur à 0")
+    }
     if(![0,1].includes(body['liaison'])){
       throw new Error("liaison doit être égale à 1 ou 0")
     }
@@ -415,6 +421,9 @@ export class LexiqueController {
     }
     if(!Number.isInteger(body['syllabes'])){
       throw new Error("syllabes doit être un entier")
+    }
+    if(body['syllabes']<1){
+      throw new Error("syllabes doit être supérieur à 0")
     }
     if(!(typeof body['themes'] === 'object')){
       throw new Error("liaison doit être une liste")
@@ -467,6 +476,9 @@ export class LexiqueController {
     }
     if(!Number.isInteger(personne['syllabes'])){
       throw new Error("syllabes doit être un entier")
+    }
+    if(personne['syllabes']<1){
+      throw new Error("syllabes doit être supérieur à 0")
     }
   }
 
