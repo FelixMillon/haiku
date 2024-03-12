@@ -320,7 +320,7 @@
             "syllabes": 3,
             "genre": "m",
             "pluriel": "std",
-            "liaison": 0
+            "liaison": 1
         }
     }
 }

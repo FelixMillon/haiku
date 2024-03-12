@@ -10,7 +10,7 @@
                 "2p": {"value": "tombez", "syllabes": 2},
                 "3p": {"value": "tombent", "syllabes": 2}
             },
-            "passé": {
+            "passe": {
                 "1s": {"value": "suis tombé", "syllabes": 3},
                 "2s": {"value": "es tombé", "syllabes": 3},
                 "3s": {"value": "est tombé", "syllabes": 3},
