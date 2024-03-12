@@ -1,326 +1,500 @@
 {
-    "hiver":{
-        "neige":{
-            "themes":["meteo","paysage","froid"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "flocon":{
-            "themes":["meteo","ciel","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "glace":{
-            "themes":["meteo","paysage","froid"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "givre":{
-            "themes":["meteo","paysage","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "gel":{
-            "themes":["meteo","paysage","froid"],
-            "syllabes": 1,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "frimas":{
-            "themes":["meteo","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "frimas",
-            "liaison": 0
-        },
-        "blizzard":{
-            "themes":["meteo","ciel","paysage","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "poudreuse":{
-            "themes":["meteo","paysage","froid"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "toundra":{
-            "themes":["paysage","froid"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "avalanche":{
-            "themes":["meteo","paysage","froid"],
-            "syllabes": 4,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 1
-        },
-        "verglas":{
-            "themes":["meteo","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "verglas",
-            "liaison": 0
-        },
-        "hiver":{
-            "themes":["froid"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 1
-        },
-        "froid":{
-            "themes":["meteo","froid"],
-            "syllabes": 1,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "Nord":{
-            "themes":["froid"],
-            "syllabes": 1,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "patinoire":{
-            "themes":["froid"],
-            "syllabes": 4,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "traîneau":{
-            "themes":["froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "traîneaux",
-            "liaison": 0
-        },
-        "tempête":{
-            "themes":["meteo","ciel","froid"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "froidure":{
-            "themes":["meteo","froid"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "luge":{
-            "themes":["froid"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "cristal":{
-            "themes":["mineral","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "cristaux",
-            "liaison": 0
-        },
-        "pierre":{
-            "themes":["mineral","paysage"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "gelure":{
-            "themes":["meteo","froid"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "hibernation":{
-            "themes":["animal","froid"],
-            "syllabes": 4,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 1
-        },
-        "grêle":{
-            "themes":["meteo","ciel","froid"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "iceberg":{
-            "themes":["mer","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 1
-        },
-        "gresil":{
-            "themes":["meteo","ciel","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "congère":{
-            "themes":["meteo", "paysage","froid"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "banquise":{
-            "themes":["mer","paysage","froid"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "solstice":{
-            "themes":["temps"],
-            "syllabes": 3,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "fourrure":{
-            "themes":["animal","froid"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "manteau":{
-            "themes":["paysage","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "manteaux",
-            "liaison": 0
-        },
-        "vent":{
-            "themes":["meteo"],
-            "syllabes": 1,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "feu":{
-            "themes":["nuit","foyer","danger"],
-            "syllabes": 1,
-            "genre": "m",
-            "pluriel": "feux",
-            "liaison": 0
-        },
-        "lièvre":{
-            "themes":["animal"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "hase":{
-            "themes":["animal"],
-            "syllabes": 1,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "famine":{
-            "themes":["danger", "mort"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "âtre":{
-            "themes":["foyer"],
-            "syllabes": 1,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 1
-        },
-        "sapin":{
-            "themes":["vegetal","paysage"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "pin":{
-            "themes":["vegetal","paysage"],
-            "syllabes": 1,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "hermine":{
-            "themes":["animal","vetement"],
-            "syllabes": 3,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 1
-        },
-        "abri":{
-            "themes":["foyer","danger"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 1
-        },
-        "laine":{
-            "themes":["animal","vetement"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "veillée":{
-            "themes":["mort","foyer"],
-            "syllabes": 2,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "nuit":{
-            "themes":["ciel","nuit","froid"],
-            "syllabes": 1,
-            "genre": "f",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "nuage":{
-            "themes":["ciel","meteo","froid"],
-            "syllabes": 2,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 0
-        },
-        "orage":{
-            "themes":["ciel","meteo","froid","danger"],
-            "syllabes": 3,
-            "genre": "m",
-            "pluriel": "std",
-            "liaison": 1
-        }
+  "hiver": {
+    "neige": {
+      "themes": [
+        "meteo",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "flocon": {
+      "themes": [
+        "meteo",
+        "ciel",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "glace": {
+      "themes": [
+        "meteo",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "givre": {
+      "themes": [
+        "meteo",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "gel": {
+      "themes": [
+        "meteo",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "frimas": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "frimas",
+      "liaison": 0
+    },
+    "blizzard": {
+      "themes": [
+        "meteo",
+        "ciel",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "poudreuse": {
+      "themes": [
+        "meteo",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "toundra": {
+      "themes": [
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "avalanche": {
+      "themes": [
+        "meteo",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 4,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "verglas": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "verglas",
+      "liaison": 0
+    },
+    "hiver": {
+      "themes": [
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "froid": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "Nord": {
+      "themes": [
+        "froid"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "patinoire": {
+      "themes": [
+        "froid"
+      ],
+      "syllabes": 4,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "traîneau": {
+      "themes": [
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "traîneaux",
+      "liaison": 0
+    },
+    "tempête": {
+      "themes": [
+        "meteo",
+        "ciel",
+        "froid"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "froidure": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "luge": {
+      "themes": [
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "cristal": {
+      "themes": [
+        "mineral",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "cristaux",
+      "liaison": 0
+    },
+    "pierre": {
+      "themes": [
+        "mineral",
+        "paysage"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "gelure": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "hibernation": {
+      "themes": [
+        "animal",
+        "froid"
+      ],
+      "syllabes": 4,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "grêle": {
+      "themes": [
+        "meteo",
+        "ciel",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "iceberg": {
+      "themes": [
+        "mer",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "gresil": {
+      "themes": [
+        "meteo",
+        "ciel",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "congère": {
+      "themes": [
+        "meteo",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "banquise": {
+      "themes": [
+        "mer",
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "solstice": {
+      "themes": [
+        "temps"
+      ],
+      "syllabes": 3,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "fourrure": {
+      "themes": [
+        "animal",
+        "froid"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "manteau": {
+      "themes": [
+        "paysage",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "manteaux",
+      "liaison": 0
+    },
+    "vent": {
+      "themes": [
+        "meteo"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "feu": {
+      "themes": [
+        "nuit",
+        "foyer",
+        "danger"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "feux",
+      "liaison": 0
+    },
+    "lièvre": {
+      "themes": [
+        "animal"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "hase": {
+      "themes": [
+        "animal"
+      ],
+      "syllabes": 1,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "famine": {
+      "themes": [
+        "danger",
+        "mort"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "âtre": {
+      "themes": [
+        "foyer"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "sapin": {
+      "themes": [
+        "vegetal",
+        "paysage"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "pin": {
+      "themes": [
+        "vegetal",
+        "paysage"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "hermine": {
+      "themes": [
+        "animal",
+        "vetement"
+      ],
+      "syllabes": 3,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "abri": {
+      "themes": [
+        "foyer",
+        "danger"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "laine": {
+      "themes": [
+        "animal",
+        "vetement"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "veillée": {
+      "themes": [
+        "mort",
+        "foyer"
+      ],
+      "syllabes": 2,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "nuit": {
+      "themes": [
+        "ciel",
+        "nuit",
+        "froid"
+      ],
+      "syllabes": 1,
+      "genre": "f",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "nuage": {
+      "themes": [
+        "ciel",
+        "meteo",
+        "froid"
+      ],
+      "syllabes": 2,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "orage": {
+      "themes": [
+        "ciel",
+        "meteo",
+        "froid",
+        "danger"
+      ],
+      "syllabes": 3,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 1
+    },
+    "test3": {
+      "themes": [
+        "test"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "test2": {
+      "themes": [
+        "test"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "test1": {
+      "themes": [
+        "test"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
     }
+  }
 }

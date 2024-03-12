@@ -1,5 +1,6 @@
 import { Controller, Get, Post, Put, Param, Body } from '@nestjs/common';
 import { LexiqueService } from './lexique.service';
+import { Nom } from '../types/nom';
 @Controller('lexique')
 export class LexiqueController {
   constructor(private readonly lexiqueService: LexiqueService) {}
@@ -15,18 +16,40 @@ export class LexiqueController {
   getNomsByTheme(@Param('theme') theme: string): object {
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
-    }else{
-      return this.lexiqueService.getNomsByTheme(theme);
     }
+    return this.lexiqueService.getNomsByTheme(theme);
   }
   @Get('noms/:theme/:nom')
   getNomsByThemeAndName(@Param('theme') theme: string,@Param('nom') nom: string): object {
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
-    }else{
-      return this.lexiqueService.getNomsByThemeAndName(theme,nom);
     }
-  } 
+    return this.lexiqueService.getNomsByThemeAndName(theme,nom); 
+  }
+  @Post('noms/:theme/:nom')
+  create(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    const nomsExistants = this.lexiqueService.getNomsByTheme(theme);
+    if(nom in nomsExistants){
+      throw new Error("le nom existe déja")
+    }
+    if(!Number.isInteger(body['syllabes'])){
+      throw new Error("syllabes doit être un entier")
+    }
+    if(![0,1].includes(body['liaison'])){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+    if(!(typeof body['pluriel'] === 'string')){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+    if(!["f","m"].includes(body['genre'])){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+    return this.lexiqueService.createNom(theme,nom,body);
+  }
+
   @Get('pronoms')
   getPronoms(): object {
     return this.lexiqueService.getPronoms();
@@ -35,62 +58,55 @@ export class LexiqueController {
   getPronomsByType(@Param('type') type: string): object {
     if(!this.authorizedTypes.includes(type)){
       throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
-    }else{
-      return this.lexiqueService.getPronomsByType(type);
     }
+    return this.lexiqueService.getPronomsByType(type);
   }
   @Get('pronoms/:type/:plurality')
   getPronomsByTypeAndPlurality(@Param('type') type: string,@Param('plurality') plurality: string): object {
     if(!this.authorizedTypes.includes(type)){
       throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
-    }else if(!this.authorizedPlurality.includes(plurality)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
-    }else{
-      return this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
     }
+    if(!this.authorizedPlurality.includes(plurality)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+    }
+    return this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
   }
   @Get('pronoms/:type/:plurality/:pronom')
   getPronomsByTypeAndPluralityAndPronom(@Param('type') type: string,@Param('plurality') plurality: string,@Param('pronom') pronom: string): object {
     if(!this.authorizedTypes.includes(type)){
       throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
-    }else if(!this.authorizedPlurality.includes(plurality)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
-    }else{
-      return this.lexiqueService.getPronomsByTypeAndPluralityAndPronom(type,plurality,pronom);
     }
-  }
-  @Post()
-  create(@Body() createItemDto: CreateItemDto) {
-    // Utilisation des données du corps de la requête pour créer un nouvel élément
-    return this.itemsService.create(createItemDto);
+    if(!this.authorizedPlurality.includes(plurality)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+    }
+    return this.lexiqueService.getPronomsByTypeAndPluralityAndPronom(type,plurality,pronom);
   }
   @Get('adjectifs/:theme')
   getAdjectifsByTheme(@Param('theme') theme: string): object {
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
-    }else{
-      return this.lexiqueService.getAdjectifsByTheme(theme);
     }
+    return this.lexiqueService.getAdjectifsByTheme(theme);
   }
   @Get('adjectifs/:theme/:genre')
   getAdjectifsByThemeAndGenre(@Param('theme') theme: string,@Param('genre') genre: string): object {
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
-    }else if(!this.authorizedGenre.includes(genre)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
-    }else{
-      return this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
     }
+    if(!this.authorizedGenre.includes(genre)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+    }
+    return this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
   }
   @Get('adjectifs/:theme/:genre/:adjectif')
   getAdjectifsByThemeAndGenreAndAdjectif(@Param('theme') theme: string,@Param('genre') genre: string,@Param('adjectif') adjectif: string): object {
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
-    }else if(!this.authorizedGenre.includes(genre)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
-    }else{
-      return this.lexiqueService.getAdjectifsByThemeAndGenreAndAdjectif(theme,genre,adjectif);
     }
+    if(!this.authorizedGenre.includes(genre)){
+      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+    }
+    return this.lexiqueService.getAdjectifsByThemeAndGenreAndAdjectif(theme,genre,adjectif);
   }
   @Get('adjectifs')
   getAdjectifs(): object {

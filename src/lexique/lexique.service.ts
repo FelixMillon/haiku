@@ -2,7 +2,9 @@ import { Injectable } from '@nestjs/common';
 import * as noms from '../../public/assets/mots/noms.json'; 
 import * as pronoms from '../../public/assets/mots/pronoms.json'; 
 import * as adjectifs from '../../public/assets/mots/adjectifs.json'; 
-import * as verbes from '../../public/assets/mots/verbes.json'; 
+import * as verbes from '../../public/assets/mots/verbes.json';
+import { Nom } from '../types/nom';
+import { updateJson } from '../bdd/manage_json';
 
 @Injectable()
 export class LexiqueService {
@@ -14,6 +16,12 @@ export class LexiqueService {
   }
   getNomsByThemeAndName(theme: string,nom: string){
     return noms[theme][nom];
+  }
+  createNom(theme: string,nom: string, body: Nom){
+    let noms = this.getNoms();
+    noms[theme][nom] = body;
+    const updated = updateJson("noms.json",noms);
+    return updated;
   }
   getPronoms(): object {
     return pronoms;
