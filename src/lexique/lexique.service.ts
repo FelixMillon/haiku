@@ -92,7 +92,7 @@ export class LexiqueService {
   getVerbe(theme: string, verbe: string): object {
     return verbes[theme][verbe];
   }
-  createVerbe(theme: string,verbe: string, body: Adjectif): boolean {
+  createVerbe(theme: string,verbe: string, body: Verbe): boolean {
     let verbes = this.getVerbes();
     verbes[theme][verbe] = body;
     const updated = updateJson("verbes.json",adjectifs);

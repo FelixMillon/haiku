@@ -3,13 +3,15 @@ import { LexiqueService } from './lexique.service';
 import { Nom } from '../types/nom';
 import { Pronom } from '../types/pronom';
 import { Adjectif } from '../types/adjectif';
-import { Verbe } from '../types/verbe';
+import { VerbeTempsPersonne, VerbeTemps, Verbe } from '../types/verbe';
 @Controller('lexique')
 export class LexiqueController {
   constructor(private readonly lexiqueService: LexiqueService) {}
   private authorizedThemes = ["ete","printemps","automne","hiver"]
   private authorizedTypes = ["personnels","possessifs","demonstratif","indéfinis","relatifs","interrogatifs","réfléchis"]
   private authorizedPlurality = ["singulier","pluriel"]
+  private authorizedPersons = ["1s","2s","3s","1p","2p","3p"]
+  private authorizedTimes = ["present","passe","futur"]
   private authorizedGenre = ["m","f"]
   @Get('noms')
   getNoms(): object {
@@ -305,6 +307,61 @@ export class LexiqueController {
     }
     return this.lexiqueService.getVerbe(theme,verbe);
   }
+  @Post('verbes/:theme/:verbe')
+  createVerbe(
+    @Body() body: Verbe,
+    @Param('theme') theme: string,
+    @Param('verbe') verbe: string
+  ) {
+    if(!(typeof verbe === 'string')){
+      throw new Error("verbe doit être une chaine de caractere")
+    }
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
+    if(verbe in verbesExistants){
+      throw new Error("le verbe existe déja")
+    }
+    this.checkIsValidVerbe(body)
+    return this.lexiqueService.createVerbe(theme,verbe,body);
+  }
+  @Put('verbes/:theme/:verbe')
+  updateVerbe(
+    @Body() body: Verbe,
+    @Param('theme') theme: string,
+    @Param('verbe') verbe: string
+  ) {
+    if(!(typeof verbe === 'string')){
+      throw new Error("verbe doit être une chaine de caractere")
+    }
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
+    if(!(verbe in verbesExistants)){
+      throw new Error("le verbe n'existe pas")
+    }
+    this.checkIsValidVerbe(body)
+    return this.lexiqueService.createVerbe(theme,verbe,body);
+  }
+  @Delete('verbes/:theme/:verbe')
+  deleteVerbe(
+    @Param('theme') theme: string,
+    @Param('verbe') verbe: string
+  ) {
+    if(!(typeof verbe === 'string')){
+      throw new Error("verbe doit être une chaine de caractere")
+    }
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
+    if(!(verbe in verbesExistants)){
+      throw new Error("le verbe n'existe pas")
+    }
+    return this.lexiqueService.deleteVerbe(theme,verbe);
+  }
 
   @Get()
   getPrez(): string {
@@ -371,4 +428,46 @@ export class LexiqueController {
       }
     }
   }
+  checkIsValidVerbe(body: Verbe): void{
+    if(!(typeof body['themes'] === 'object')){
+      throw new Error("liaison doit être une liste")
+    }
+    for(let index in body['themes']){
+      if(!Number.isInteger(parseInt(index))){
+        throw new Error("liaison doit être une liste")
+      }
+      if(!(typeof body['themes'][index] === 'string')){
+        throw new Error("Chaque thème doit être une chaine de caractère")
+      }
+    }
+    const nombreDeCle = Object.keys(body).length;
+    if(!(Object.keys(body).length === 4)){
+      throw new Error("Un verbe est caractérisé par 4 élements : theme, present, passe, futur")
+    }
+    for(let element in body){
+      if(element != "themes"){
+        if(!this.authorizedTimes.includes(element)){
+          throw new Error(`Un temps doit avoir l'une des valeurs suivantes : ${this.authorizedTimes.join(', ')}`)
+        }
+        this.checkIsValidVerbeTemps(body[element])
+      }
+    }
+  }
+  checkIsValidVerbeTemps(temps: VerbeTemps): void{
+    for(let personne in temps){
+      if(!this.authorizedPersons.includes(personne)){
+        throw new Error(`Une personne doit avoir une des valeur suivante : ${this.authorizedPersons.join(', ')}`)
+      }
+      this.checkIsValidVerbeTempsPersonne(temps[personne])
+    }
+  }
+  checkIsValidVerbeTempsPersonne(personne: VerbeTempsPersonne): void{
+    if(!(typeof personne['value'] === 'string')){
+      throw new Error("La valeur conjuguée doit être de type string")
+    }
+    if(!Number.isInteger(personne['syllabes'])){
+      throw new Error("syllabes doit être un entier")
+    }
+  }
+
 }
