@@ -1,627 +1,1961 @@
 {
-    "hiver":{
-        "tomber": {
-            "themes": ["animal","meteo","mort","danger","ciel"],
-            "present": {
-                "1s": {"value": "tombe", "syllabes": 1},
-                "2s": {"value": "tombes", "syllabes": 1},
-                "3s": {"value": "tombe", "syllabes": 1},
-                "1p": {"value": "tombons", "syllabes": 2},
-                "2p": {"value": "tombez", "syllabes": 2},
-                "3p": {"value": "tombent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "suis tombé", "syllabes": 3},
-                "2s": {"value": "es tombé", "syllabes": 3},
-                "3s": {"value": "est tombé", "syllabes": 3},
-                "1p": {"value": "sommes tombés", "syllabes": 3},
-                "2p": {"value": "êtes tombés", "syllabes": 3},
-                "3p": {"value": "sont tombés", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "tomberai", "syllabes": 4},
-                "2s": {"value": "tomberas", "syllabes": 4},
-                "3s": {"value": "tombera", "syllabes": 3},
-                "1p": {"value": "tomberons", "syllabes": 4},
-                "2p": {"value": "tomberez", "syllabes": 3},
-                "3p": {"value": "tomberont", "syllabes": 4}
-            }
-        },        
-        "pleuvoir": {
-            "themes": ["meteo","ciel"],
-            "present": {
-                "1s": {"value": "pleus", "syllabes": 1},
-                "2s": {"value": "pleus", "syllabes": 1},
-                "3s": {"value": "pleut", "syllabes": 1},
-                "1p": {"value": "pleuvons", "syllabes": 2},
-                "2p": {"value": "pleuvez", "syllabes": 2},
-                "3p": {"value": "pleuvent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai plu", "syllabes": 2},
-                "2s": {"value": "as plu", "syllabes": 2},
-                "3s": {"value": "a plu", "syllabes": 2},
-                "1p": {"value": "avons plu", "syllabes": 3},
-                "2p": {"value": "avez plu", "syllabes": 3},
-                "3p": {"value": "ont plu", "syllabes": 2}
-            },
-            "futur": {
-                "1s": {"value": "pleuvrai", "syllabes": 3},
-                "2s": {"value": "pleuvras", "syllabes": 3},
-                "3s": {"value": "pleuvra", "syllabes": 2},
-                "1p": {"value": "pleuvrons", "syllabes": 3},
-                "2p": {"value": "pleuvrez", "syllabes": 3},
-                "3p": {"value": "pleuvront", "syllabes": 3}
-            }
-        },        
-        "neiger": {
-            "themes": ["meteo","ciel"],
-            "present": {
-                "1s": {"value": "neige", "syllabes": 1},
-                "2s": {"value": "neiges", "syllabes": 1},
-                "3s": {"value": "neige", "syllabes": 1},
-                "1p": {"value": "neigeons", "syllabes": 2},
-                "2p": {"value": "neigez", "syllabes": 2},
-                "3p": {"value": "neigent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai neigé", "syllabes": 3},
-                "2s": {"value": "as neigé", "syllabes": 3},
-                "3s": {"value": "a neigé", "syllabes": 3},
-                "1p": {"value": "avons neigé", "syllabes": 4},
-                "2p": {"value": "avez neigé", "syllabes": 4},
-                "3p": {"value": "ont neigé", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "neigerai", "syllabes": 4},
-                "2s": {"value": "neigeras", "syllabes": 4},
-                "3s": {"value": "neigera", "syllabes": 3},
-                "1p": {"value": "neigerons", "syllabes": 4},
-                "2p": {"value": "neigerez", "syllabes": 4},
-                "3p": {"value": "neigeront", "syllabes": 4}
-            }
+  "hiver": {
+    "tomber": {
+      "themes": [
+        "animal",
+        "meteo",
+        "mort",
+        "danger",
+        "ciel"
+      ],
+      "present": {
+        "1s": {
+          "value": "tombe",
+          "syllabes": 1
         },
-        "glacer": {
-            "themes": ["meteo","froid"],
-            "present": {
-                "1s": {"value": "glace", "syllabes": 1},
-                "2s": {"value": "glaces", "syllabes": 1},
-                "3s": {"value": "glace", "syllabes": 1},
-                "1p": {"value": "glaçons", "syllabes": 2},
-                "2p": {"value": "glacez", "syllabes": 2},
-                "3p": {"value": "glacent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai glacé", "syllabes": 3},
-                "2s": {"value": "as glacé", "syllabes": 3},
-                "3s": {"value": "a glacé", "syllabes": 3},
-                "1p": {"value": "avons glacé", "syllabes": 4},
-                "2p": {"value": "avez glacé", "syllabes": 4},
-                "3p": {"value": "ont glacé", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "glacerai", "syllabes": 4},
-                "2s": {"value": "glaceras", "syllabes": 4},
-                "3s": {"value": "glacera", "syllabes": 3},
-                "1p": {"value": "glacerons", "syllabes": 4},
-                "2p": {"value": "glacerez", "syllabes": 4},
-                "3p": {"value": "glaceront", "syllabes": 4}
-            }
+        "2s": {
+          "value": "tombes",
+          "syllabes": 1
         },
-        "geler ": {
-            "themes": ["meteo","froid","paysage"],
-            "present": {
-                "1s": {"value": "gèle", "syllabes": 1},
-                "2s": {"value": "gèles", "syllabes": 1},
-                "3s": {"value": "gèle", "syllabes": 1},
-                "1p": {"value": "gelons", "syllabes": 2},
-                "2p": {"value": "gelez", "syllabes": 2},
-                "3p": {"value": "gèlent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai gelé", "syllabes": 3},
-                "2s": {"value": "as gelé", "syllabes": 3},
-                "3s": {"value": "a gelé", "syllabes": 3},
-                "1p": {"value": "avons gelé", "syllabes": 4},
-                "2p": {"value": "avez gelé", "syllabes": 4},
-                "3p": {"value": "ont gelé", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "gèlerai", "syllabes": 4},
-                "2s": {"value": "gèleras", "syllabes": 4},
-                "3s": {"value": "gèlera", "syllabes": 3},
-                "1p": {"value": "gèlerons", "syllabes": 4},
-                "2p": {"value": "gèlerez", "syllabes": 4},
-                "3p": {"value": "gèleront", "syllabes": 4}
-            }
+        "3s": {
+          "value": "tombe",
+          "syllabes": 1
         },
-        "frissonner ": {
-            "themes": ["animal","meteo","froid"],
-            "present": {
-                "1s": {"value": "frissonne", "syllabes": 2},
-                "2s": {"value": "frissonnes", "syllabes": 3},
-                "3s": {"value": "frisonne", "syllabes": 2},
-                "1p": {"value": "frissonnons", "syllabes": 3},
-                "2p": {"value": "frissonnez", "syllabes": 3},
-                "3p": {"value": "frissonnent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai frissonné", "syllabes": 4},
-                "2s": {"value": "as frissonné", "syllabes": 4},
-                "3s": {"value": "a frissonné", "syllabes": 4},
-                "1p": {"value": "avons frissonné", "syllabes": 5},
-                "2p": {"value": "avez frissonné", "syllabes": 5},
-                "3p": {"value": "ont frissonné", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "frissonnerai", "syllabes": 5},
-                "2s": {"value": "frissonneras", "syllabes": 5},
-                "3s": {"value": "frissonnera", "syllabes": 5},
-                "1p": {"value": "frissonnerons", "syllabes": 6},
-                "2p": {"value": "frissonnerez", "syllabes": 6},
-                "3p": {"value": "frissonneront", "syllabes": 6}
-            }
+        "1p": {
+          "value": "tombons",
+          "syllabes": 2
         },
-        "enneiger ": {
-            "themes": ["meteo","froid","paysage"],
-            "present": {
-                "1s": {"value": "enneige", "syllabes": 3},
-                "2s": {"value": "enneiges", "syllabes": 3},
-                "3s": {"value": "enneige", "syllabes": 3},
-                "1p": {"value": "enneigeons", "syllabes": 4},
-                "2p": {"value": "enneigez", "syllabes": 4},
-                "3p": {"value": "enneigent", "syllabes": 4}
-            },
-            "passe": {
-                "1s": {"value": "ai enneigé", "syllabes": 4},
-                "2s": {"value": "as enneigé", "syllabes": 4},
-                "3s": {"value": "a enneigé", "syllabes": 4},
-                "1p": {"value": "avons enneigé", "syllabes": 5},
-                "2p": {"value": "avez enneigé", "syllabes": 5},
-                "3p": {"value": "ont enneigé", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "enneigerai", "syllabes": 5},
-                "2s": {"value": "enneigeras", "syllabes": 5},
-                "3s": {"value": "enneigera", "syllabes": 5},
-                "1p": {"value": "enneigerons", "syllabes": 6},
-                "2p": {"value": "enneigerez", "syllabes": 6},
-                "3p": {"value": "enneigeront", "syllabes": 6}
-            }
+        "2p": {
+          "value": "tombez",
+          "syllabes": 2
         },
-        "floconner": {
-            "themes": ["meteo","froid"],
-            "present": {
-                "1s": {"value": "floconne", "syllabes": 2},
-                "2s": {"value": "floconnes", "syllabes": 3},
-                "3s": {"value": "floconne", "syllabes": 2},
-                "1p": {"value": "floconnons", "syllabes": 3},
-                "2p": {"value": "floconnez", "syllabes": 3},
-                "3p": {"value": "floconnent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai floconné", "syllabes": 4},
-                "2s": {"value": "as floconné", "syllabes": 4},
-                "3s": {"value": "a floconné", "syllabes": 4},
-                "1p": {"value": "avons floconné", "syllabes": 5},
-                "2p": {"value": "avez floconné", "syllabes": 5},
-                "3p": {"value": "ont floconné", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "floconnerai", "syllabes": 5},
-                "2s": {"value": "floconneras", "syllabes": 5},
-                "3s": {"value": "floconnera", "syllabes": 5},
-                "1p": {"value": "floconnerons", "syllabes": 6},
-                "2p": {"value": "floconnerez", "syllabes": 6},
-                "3p": {"value": "floconneront", "syllabes": 6}
-            }
-        },
-        "blottir": {
-            "themes": ["animal","foyer"],
-            "present": {
-                "1s": {"value": "blottis", "syllabes": 2},
-                "2s": {"value": "blottis", "syllabes": 2},
-                "3s": {"value": "blottit", "syllabes": 2},
-                "1p": {"value": "blottissons", "syllabes": 3},
-                "2p": {"value": "blottissez", "syllabes": 3},
-                "3p": {"value": "blottissent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "me suis blotti", "syllabes": 4},
-                "2s": {"value": "t'es blotti", "syllabes": 4},
-                "3s": {"value": "s'est blotti", "syllabes": 4},
-                "1p": {"value": "nous sommes blottis", "syllabes": 5},
-                "2p": {"value": "vous êtes blottis", "syllabes": 5},
-                "3p": {"value": "se sont blottis", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "blottirai", "syllabes": 4},
-                "2s": {"value": "blottiras", "syllabes": 4},
-                "3s": {"value": "blottera", "syllabes": 3},
-                "1p": {"value": "blotterons", "syllabes": 4},
-                "2p": {"value": "blotterez", "syllabes": 4},
-                "3p": {"value": "blotteront", "syllabes": 4}
-            }
-        },
-        "patiner": {
-            "themes": ["animal","froid"],
-            "present": {
-                "1s": {"value": "patine", "syllabes": 2},
-                "2s": {"value": "patines", "syllabes": 2},
-                "3s": {"value": "patine", "syllabes": 2},
-                "1p": {"value": "patinons", "syllabes": 3},
-                "2p": {"value": "patinez", "syllabes": 3},
-                "3p": {"value": "patinent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai patiné", "syllabes": 4},
-                "2s": {"value": "as patiné", "syllabes": 4},
-                "3s": {"value": "a patiné", "syllabes": 4},
-                "1p": {"value": "avons patiné", "syllabes": 5},
-                "2p": {"value": "avez patiné", "syllabes": 5},
-                "3p": {"value": "ont patiné", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "patinerai", "syllabes": 5},
-                "2s": {"value": "patineras", "syllabes": 5},
-                "3s": {"value": "patinera", "syllabes": 4},
-                "1p": {"value": "patinerons", "syllabes": 5},
-                "2p": {"value": "patinerez", "syllabes": 5},
-                "3p": {"value": "patineront", "syllabes": 5}
-            }
-        },
-        "grelotter": {
-            "themes": ["meteo","froid"],
-            "present": {
-                "1s": {"value": "grelotte", "syllabes": 3},
-                "2s": {"value": "grelottes", "syllabes": 3},
-                "3s": {"value": "grelotte", "syllabes": 3},
-                "1p": {"value": "grelottons", "syllabes": 3},
-                "2p": {"value": "grelottez", "syllabes": 3},
-                "3p": {"value": "grelottent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai grelotté", "syllabes": 4},
-                "2s": {"value": "as grelotté", "syllabes": 4},
-                "3s": {"value": "a grelotté", "syllabes": 4},
-                "1p": {"value": "avons grelotté", "syllabes": 5},
-                "2p": {"value": "avez grelotté", "syllabes": 5},
-                "3p": {"value": "ont grelotté", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "grelotterai", "syllabes": 5},
-                "2s": {"value": "grelotteras", "syllabes": 5},
-                "3s": {"value": "grelottera", "syllabes": 5},
-                "1p": {"value": "grelotterons", "syllabes": 6},
-                "2p": {"value": "grelotterez", "syllabes": 6},
-                "3p": {"value": "grelotteront", "syllabes": 6}
-            }
-        },
-        "souffler": {
-            "themes": ["meteo","ciel","froid"],
-            "present": {
-                "1s": {"value": "souffle", "syllabes": 2},
-                "2s": {"value": "souffles", "syllabes": 2},
-                "3s": {"value": "souffle", "syllabes": 2},
-                "1p": {"value": "soufflons", "syllabes": 2},
-                "2p": {"value": "soufflez", "syllabes": 2},
-                "3p": {"value": "soufflent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai soufflé", "syllabes": 3},
-                "2s": {"value": "as soufflé", "syllabes": 3},
-                "3s": {"value": "a soufflé", "syllabes": 3},
-                "1p": {"value": "avons soufflé", "syllabes": 4},
-                "2p": {"value": "avez soufflé", "syllabes": 4},
-                "3p": {"value": "ont soufflé", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "soufflerai", "syllabes": 4},
-                "2s": {"value": "souffleras", "syllabes": 4},
-                "3s": {"value": "soufflera", "syllabes": 4},
-                "1p": {"value": "soufflerons", "syllabes": 5},
-                "2p": {"value": "soufflerez", "syllabes": 5},
-                "3p": {"value": "souffleront", "syllabes": 4}
-            }
-        },
-        "hiberner": {
-            "themes": ["animal"],
-            "present": {
-                "1s": {"value": "hiberne", "syllabes": 3},
-                "2s": {"value": "hibernes", "syllabes": 3},
-                "3s": {"value": "hiberne", "syllabes": 3},
-                "1p": {"value": "hibernons", "syllabes": 3},
-                "2p": {"value": "hibernez", "syllabes": 3},
-                "3p": {"value": "hibernent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai hiberné", "syllabes": 4},
-                "2s": {"value": "as hiberné", "syllabes": 4},
-                "3s": {"value": "a hiberné", "syllabes": 4},
-                "1p": {"value": "avons hiberné", "syllabes": 5},
-                "2p": {"value": "avez hiberné", "syllabes": 5},
-                "3p": {"value": "ont hiberné", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "hibernerai", "syllabes": 5},
-                "2s": {"value": "hiberneras", "syllabes": 5},
-                "3s": {"value": "hibernera", "syllabes": 5},
-                "1p": {"value": "hibernerons", "syllabes": 6},
-                "2p": {"value": "hibernerez", "syllabes": 6},
-                "3p": {"value": "hiberneront", "syllabes": 6}
-            }
-        },
-        "frémir": {
-            "themes": ["animal","froid","mineral"],
-            "present": {
-                "1s": {"value": "frémis", "syllabes": 2},
-                "2s": {"value": "frémis", "syllabes": 2},
-                "3s": {"value": "frémit", "syllabes": 2},
-                "1p": {"value": "frémissons", "syllabes": 3},
-                "2p": {"value": "frémissez", "syllabes": 3},
-                "3p": {"value": "frémissent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai frémi", "syllabes": 3},
-                "2s": {"value": "as frémi", "syllabes": 3},
-                "3s": {"value": "a frémi", "syllabes": 3},
-                "1p": {"value": "avons frémi", "syllabes": 4},
-                "2p": {"value": "avez frémi", "syllabes": 4},
-                "3p": {"value": "ont frémi", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "frémirai", "syllabes": 4},
-                "2s": {"value": "frémiras", "syllabes": 4},
-                "3s": {"value": "frémira", "syllabes": 3},
-                "1p": {"value": "frémirons", "syllabes": 4},
-                "2p": {"value": "frémirez", "syllabes": 4},
-                "3p": {"value": "frémiront", "syllabes": 4}
-            }
-        },
-        "dériver": {
-            "themes": ["mer","ciel","mort","danger"],
-            "present": {
-                "1s": {"value": "dérive", "syllabes": 2},
-                "2s": {"value": "dérives", "syllabes": 2},
-                "3s": {"value": "dérive", "syllabes": 2},
-                "1p": {"value": "dérivons", "syllabes": 3},
-                "2p": {"value": "dérivez", "syllabes": 2},
-                "3p": {"value": "dérivent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai dérivé", "syllabes": 4},
-                "2s": {"value": "as dérivé", "syllabes": 4},
-                "3s": {"value": "a dérivé", "syllabes": 4},
-                "1p": {"value": "avons dérivé", "syllabes": 5},
-                "2p": {"value": "avez dérivé", "syllabes": 5},
-                "3p": {"value": "ont dérivé", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "dériverai", "syllabes": 5},
-                "2s": {"value": "dériveras", "syllabes": 5},
-                "3s": {"value": "dériverea", "syllabes": 4},
-                "1p": {"value": "dériverons", "syllabes": 5},
-                "2p": {"value": "déréverez", "syllabes": 4},
-                "3p": {"value": "dériveront", "syllabes": 5}
-            }
-        },
-        "craquer": {
-            "themes": ["mer","froid","danger","paysage","mineral"],
-            "present": {
-                "1s": {"value": "craque", "syllabes": 2},
-                "2s": {"value": "craques", "syllabes": 2},
-                "3s": {"value": "craque", "syllabes": 2},
-                "1p": {"value": "craquons", "syllabes": 2},
-                "2p": {"value": "craquez", "syllabes": 2},
-                "3p": {"value": "craquent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai craqué", "syllabes": 3},
-                "2s": {"value": "as craqué", "syllabes": 3},
-                "3s": {"value": "a craqué", "syllabes": 3},
-                "1p": {"value": "avons craqué", "syllabes": 4},
-                "2p": {"value": "avez craqué", "syllabes": 4},
-                "3p": {"value": "ont craqué", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "craquerai", "syllabes": 4},
-                "2s": {"value": "craqueras", "syllabes": 4},
-                "3s": {"value": "craquera", "syllabes": 3},
-                "1p": {"value": "craquerons", "syllabes": 4},
-                "2p": {"value": "craquerez", "syllabes": 4},
-                "3p": {"value": "craqueront", "syllabes": 4}
-            }
-        },
-        "courir": {
-            "themes": ["animal"],
-            "present": {
-                "1s": {"value": "cours", "syllabes": 1},
-                "2s": {"value": "cours", "syllabes": 1},
-                "3s": {"value": "court", "syllabes": 1},
-                "1p": {"value": "courons", "syllabes": 2},
-                "2p": {"value": "courez", "syllabes": 2},
-                "3p": {"value": "courent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai couru", "syllabes": 3},
-                "2s": {"value": "as couru", "syllabes": 3},
-                "3s": {"value": "a couru", "syllabes": 3},
-                "1p": {"value": "avons couru", "syllabes": 4},
-                "2p": {"value": "avez couru", "syllabes": 4},
-                "3p": {"value": "ont couru", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "courrai", "syllabes": 3},
-                "2s": {"value": "courras", "syllabes": 3},
-                "3s": {"value": "courra", "syllabes": 2},
-                "1p": {"value": "courrons", "syllabes": 3},
-                "2p": {"value": "courrez", "syllabes": 3},
-                "3p": {"value": "courront", "syllabes": 3}
-            }
-        },
-        "éclater": {
-            "themes": ["froid","meteo","danger","paysage","mineral"],
-            "present": {
-                "1s": {"value": "éclate", "syllabes": 2},
-                "2s": {"value": "éclates", "syllabes": 3},
-                "3s": {"value": "éclate", "syllabes": 2},
-                "1p": {"value": "éclatons", "syllabes": 3},
-                "2p": {"value": "éclatez", "syllabes": 3},
-                "3p": {"value": "éclatent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai éclaté", "syllabes": 4},
-                "2s": {"value": "as éclaté", "syllabes": 4},
-                "3s": {"value": "a éclaté", "syllabes": 4},
-                "1p": {"value": "avons éclaté", "syllabes": 5},
-                "2p": {"value": "avez éclaté", "syllabes": 5},
-                "3p": {"value": "ont éclaté", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "éclaterai", "syllabes": 5},
-                "2s": {"value": "éclateras", "syllabes": 5},
-                "3s": {"value": "éclatera", "syllabes": 4},
-                "1p": {"value": "éclaterons", "syllabes": 5},
-                "2p": {"value": "éclaterez", "syllabes": 5},
-                "3p": {"value": "éclateront", "syllabes": 5}
-            }
-        },
-        "scintiller": {
-            "themes": ["mineral","nuit","froid","meteo","mer","temps","paysage"],
-            "present": {
-                "1s": {"value": "scintille", "syllabes": 2},
-                "2s": {"value": "scintilles", "syllabes": 2},
-                "3s": {"value": "scintille", "syllabes": 2},
-                "1p": {"value": "scintillons", "syllabes": 3},
-                "2p": {"value": "scintillez", "syllabes": 3},
-                "3p": {"value": "scintillent", "syllabes": 2}
-            },
-            "passe": {
-                "1s": {"value": "ai scintillé", "syllabes": 3},
-                "2s": {"value": "as scintillé", "syllabes": 3},
-                "3s": {"value": "a scintillé", "syllabes": 3},
-                "1p": {"value": "avons scintillé", "syllabes": 5},
-                "2p": {"value": "avez scintillé", "syllabes": 5},
-                "3p": {"value": "ont scintillé", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "scintillerai", "syllabes": 4},
-                "2s": {"value": "scintilleras", "syllabes": 4},
-                "3s": {"value": "scintillera", "syllabes": 4},
-                "1p": {"value": "scintillerons", "syllabes": 4},
-                "2p": {"value": "scintillerez", "syllabes": 4},
-                "3p": {"value": "scintilleront", "syllabes": 4}
-            }
-        },
-        "gronder": {
-            "themes": ["froid","meteo","danger","mort","ciel","animal","temps"],
-            "present": {
-                "1s": {"value": "gronde", "syllabes": 2},
-                "2s": {"value": "grondes", "syllabes": 2},
-                "3s": {"value": "gronde", "syllabes": 2},
-                "1p": {"value": "grondons", "syllabes": 3},
-                "2p": {"value": "grondez", "syllabes": 2},
-                "3p": {"value": "grondent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai grondé", "syllabes": 3},
-                "2s": {"value": "as grondé", "syllabes": 3},
-                "3s": {"value": "a grondé", "syllabes": 3},
-                "1p": {"value": "avons grondé", "syllabes": 4},
-                "2p": {"value": "avez grondé", "syllabes": 4},
-                "3p": {"value": "ont grondé", "syllabes": 3}
-            },
-            "futur": {
-                "1s": {"value": "gronderai", "syllabes": 4},
-                "2s": {"value": "gronderas", "syllabes": 4},
-                "3s": {"value": "grondera", "syllabes": 3},
-                "1p": {"value": "gronderons", "syllabes": 4},
-                "2p": {"value": "gronderez", "syllabes": 4},
-                "3p": {"value": "gronderont", "syllabes": 4}
-            }
-        },
-        "survivre": {
-            "themes": ["vegetal", "animal", "foyer", "nuit","danger"],
-            "present": {
-                "1s": {"value": "survis", "syllabes": 2},
-                "2s": {"value": "survis", "syllabes": 2},
-                "3s": {"value": "survit", "syllabes": 2},
-                "1p": {"value": "survivons", "syllabes": 4},
-                "2p": {"value": "survivez", "syllabes": 3},
-                "3p": {"value": "survivent", "syllabes": 3}
-            },
-            "passe": {
-                "1s": {"value": "ai survécu", "syllabes": 4},
-                "2s": {"value": "as survécu", "syllabes": 4},
-                "3s": {"value": "a survécu", "syllabes": 4},
-                "1p": {"value": "avons survécu", "syllabes": 5},
-                "2p": {"value": "avez survécu", "syllabes": 5},
-                "3p": {"value": "ont survécu", "syllabes": 4}
-            },
-            "futur": {
-                "1s": {"value": "survivrai", "syllabes": 4},
-                "2s": {"value": "survivras", "syllabes": 4},
-                "3s": {"value": "survivra", "syllabes": 4},
-                "1p": {"value": "survivrons", "syllabes": 4},
-                "2p": {"value": "survivrez", "syllabes": 4},
-                "3p": {"value": "survivront", "syllabes": 4}
-            }
-        },
-        "être": {
-            "themes": ["*"],
-            "present": {
-                "1s": {"value": "suis", "syllabes": 1},
-                "2s": {"value": "es", "syllabes": 1},
-                "3s": {"value": "est", "syllabes": 1},
-                "1p": {"value": "sommes", "syllabes": 2},
-                "2p": {"value": "êtes", "syllabes": 1},
-                "3p": {"value": "sont", "syllabes": 1}
-            },
-            "passe": {
-                "1s": {"value": "ai été", "syllabes": 2},
-                "2s": {"value": "as été", "syllabes": 2},
-                "3s": {"value": "a été", "syllabes": 2},
-                "1p": {"value": "avons été", "syllabes": 3},
-                "2p": {"value": "avez été", "syllabes": 3},
-                "3p": {"value": "ont été", "syllabes": 2}
-            },
-            "futur": {
-                "1s": {"value": "serai", "syllabes": 2},
-                "2s": {"value": "seras", "syllabes": 2},
-                "3s": {"value": "sera", "syllabes": 2},
-                "1p": {"value": "serons", "syllabes": 2},
-                "2p": {"value": "serez", "syllabes": 2},
-                "3p": {"value": "seront", "syllabes": 2}
-            }
-        },
-        "avoir": {
-            "themes": ["*"],
-            "present": {
-                "1s": {"value": "ai", "syllabes": 1},
-                "2s": {"value": "as", "syllabes": 1},
-                "3s": {"value": "a", "syllabes": 1},
-                "1p": {"value": "avons", "syllabes": 2},
-                "2p": {"value": "avez", "syllabes": 2},
-                "3p": {"value": "ont", "syllabes": 1}
-            },
-            "passe": {
-                "1s": {"value": "ai eu", "syllabes": 2},
-                "2s": {"value": "as eu", "syllabes": 2},
-                "3s": {"value": "a eu", "syllabes": 2},
-                "1p": {"value": "avons eu", "syllabes": 3},
-                "2p": {"value": "avez eu", "syllabes": 3},
-                "3p": {"value": "ont eu", "syllabes": 2}
-            },
-            "futur": {
-                "1s": {"value": "aurai", "syllabes": 3},
-                "2s": {"value": "auras", "syllabes": 3},
-                "3s": {"value": "aura", "syllabes": 2},
-                "1p": {"value": "aurons", "syllabes": 3},
-                "2p": {"value": "aurez", "syllabes": 2},
-                "3p": {"value": "auront", "syllabes": 3}
-            }
+        "3p": {
+          "value": "tombent",
+          "syllabes": 2
         }
+      },
+      "passe": {
+        "1s": {
+          "value": "suis tombé",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "es tombé",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "est tombé",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "sommes tombés",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "êtes tombés",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "sont tombés",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "tomberai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "tomberas",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "tombera",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "tomberons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "tomberez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "tomberont",
+          "syllabes": 4
+        }
+      }
+    },
+    "pleuvoir": {
+      "themes": [
+        "meteo",
+        "ciel"
+      ],
+      "present": {
+        "1s": {
+          "value": "pleus",
+          "syllabes": 1
+        },
+        "2s": {
+          "value": "pleus",
+          "syllabes": 1
+        },
+        "3s": {
+          "value": "pleut",
+          "syllabes": 1
+        },
+        "1p": {
+          "value": "pleuvons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "pleuvez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "pleuvent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai plu",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "as plu",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "a plu",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "avons plu",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "avez plu",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "ont plu",
+          "syllabes": 2
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "pleuvrai",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "pleuvras",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "pleuvra",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "pleuvrons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "pleuvrez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "pleuvront",
+          "syllabes": 3
+        }
+      }
+    },
+    "neiger": {
+      "themes": [
+        "meteo",
+        "ciel"
+      ],
+      "present": {
+        "1s": {
+          "value": "neige",
+          "syllabes": 1
+        },
+        "2s": {
+          "value": "neiges",
+          "syllabes": 1
+        },
+        "3s": {
+          "value": "neige",
+          "syllabes": 1
+        },
+        "1p": {
+          "value": "neigeons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "neigez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "neigent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai neigé",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as neigé",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a neigé",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons neigé",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez neigé",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont neigé",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "neigerai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "neigeras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "neigera",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "neigerons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "neigerez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "neigeront",
+          "syllabes": 4
+        }
+      }
+    },
+    "glacer": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "present": {
+        "1s": {
+          "value": "glace",
+          "syllabes": 1
+        },
+        "2s": {
+          "value": "glaces",
+          "syllabes": 1
+        },
+        "3s": {
+          "value": "glace",
+          "syllabes": 1
+        },
+        "1p": {
+          "value": "glaçons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "glacez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "glacent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai glacé",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as glacé",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a glacé",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons glacé",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez glacé",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont glacé",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "glacerai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "glaceras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "glacera",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "glacerons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "glacerez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "glaceront",
+          "syllabes": 4
+        }
+      }
+    },
+    "geler ": {
+      "themes": [
+        "meteo",
+        "froid",
+        "paysage"
+      ],
+      "present": {
+        "1s": {
+          "value": "gèle",
+          "syllabes": 1
+        },
+        "2s": {
+          "value": "gèles",
+          "syllabes": 1
+        },
+        "3s": {
+          "value": "gèle",
+          "syllabes": 1
+        },
+        "1p": {
+          "value": "gelons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "gelez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "gèlent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai gelé",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as gelé",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a gelé",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons gelé",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez gelé",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont gelé",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "gèlerai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "gèleras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "gèlera",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "gèlerons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "gèlerez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "gèleront",
+          "syllabes": 4
+        }
+      }
+    },
+    "frissonner ": {
+      "themes": [
+        "animal",
+        "meteo",
+        "froid"
+      ],
+      "present": {
+        "1s": {
+          "value": "frissonne",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "frissonnes",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "frisonne",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "frissonnons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "frissonnez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "frissonnent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai frissonné",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as frissonné",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a frissonné",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons frissonné",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez frissonné",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont frissonné",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "frissonnerai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "frissonneras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "frissonnera",
+          "syllabes": 5
+        },
+        "1p": {
+          "value": "frissonnerons",
+          "syllabes": 6
+        },
+        "2p": {
+          "value": "frissonnerez",
+          "syllabes": 6
+        },
+        "3p": {
+          "value": "frissonneront",
+          "syllabes": 6
+        }
+      }
+    },
+    "enneiger ": {
+      "themes": [
+        "meteo",
+        "froid",
+        "paysage"
+      ],
+      "present": {
+        "1s": {
+          "value": "enneige",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "enneiges",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "enneige",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "enneigeons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "enneigez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "enneigent",
+          "syllabes": 4
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai enneigé",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as enneigé",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a enneigé",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons enneigé",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez enneigé",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont enneigé",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "enneigerai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "enneigeras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "enneigera",
+          "syllabes": 5
+        },
+        "1p": {
+          "value": "enneigerons",
+          "syllabes": 6
+        },
+        "2p": {
+          "value": "enneigerez",
+          "syllabes": 6
+        },
+        "3p": {
+          "value": "enneigeront",
+          "syllabes": 6
+        }
+      }
+    },
+    "floconner": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "present": {
+        "1s": {
+          "value": "floconne",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "floconnes",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "floconne",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "floconnons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "floconnez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "floconnent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai floconné",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as floconné",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a floconné",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons floconné",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez floconné",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont floconné",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "floconnerai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "floconneras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "floconnera",
+          "syllabes": 5
+        },
+        "1p": {
+          "value": "floconnerons",
+          "syllabes": 6
+        },
+        "2p": {
+          "value": "floconnerez",
+          "syllabes": 6
+        },
+        "3p": {
+          "value": "floconneront",
+          "syllabes": 6
+        }
+      }
+    },
+    "blottir": {
+      "themes": [
+        "animal",
+        "foyer"
+      ],
+      "present": {
+        "1s": {
+          "value": "blottis",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "blottis",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "blottit",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "blottissons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "blottissez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "blottissent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "me suis blotti",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "t'es blotti",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "s'est blotti",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "nous sommes blottis",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "vous êtes blottis",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "se sont blottis",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "blottirai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "blottiras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "blottera",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "blotterons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "blotterez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "blotteront",
+          "syllabes": 4
+        }
+      }
+    },
+    "patiner": {
+      "themes": [
+        "animal",
+        "froid"
+      ],
+      "present": {
+        "1s": {
+          "value": "patine",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "patines",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "patine",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "patinons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "patinez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "patinent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai patiné",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as patiné",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a patiné",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons patiné",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez patiné",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont patiné",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "patinerai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "patineras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "patinera",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "patinerons",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "patinerez",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "patineront",
+          "syllabes": 5
+        }
+      }
+    },
+    "grelotter": {
+      "themes": [
+        "meteo",
+        "froid"
+      ],
+      "present": {
+        "1s": {
+          "value": "grelotte",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "grelottes",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "grelotte",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "grelottons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "grelottez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "grelottent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai grelotté",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as grelotté",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a grelotté",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons grelotté",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez grelotté",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont grelotté",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "grelotterai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "grelotteras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "grelottera",
+          "syllabes": 5
+        },
+        "1p": {
+          "value": "grelotterons",
+          "syllabes": 6
+        },
+        "2p": {
+          "value": "grelotterez",
+          "syllabes": 6
+        },
+        "3p": {
+          "value": "grelotteront",
+          "syllabes": 6
+        }
+      }
+    },
+    "souffler": {
+      "themes": [
+        "meteo",
+        "ciel",
+        "froid"
+      ],
+      "present": {
+        "1s": {
+          "value": "souffle",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "souffles",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "souffle",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "soufflons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "soufflez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "soufflent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai soufflé",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as soufflé",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a soufflé",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons soufflé",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez soufflé",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont soufflé",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "soufflerai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "souffleras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "soufflera",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "soufflerons",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "soufflerez",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "souffleront",
+          "syllabes": 4
+        }
+      }
+    },
+    "hiberner": {
+      "themes": [
+        "animal"
+      ],
+      "present": {
+        "1s": {
+          "value": "hiberne",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "hibernes",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "hiberne",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "hibernons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "hibernez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "hibernent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai hiberné",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as hiberné",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a hiberné",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons hiberné",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez hiberné",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont hiberné",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "hibernerai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "hiberneras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "hibernera",
+          "syllabes": 5
+        },
+        "1p": {
+          "value": "hibernerons",
+          "syllabes": 6
+        },
+        "2p": {
+          "value": "hibernerez",
+          "syllabes": 6
+        },
+        "3p": {
+          "value": "hiberneront",
+          "syllabes": 6
+        }
+      }
+    },
+    "frémir": {
+      "themes": [
+        "animal",
+        "froid",
+        "mineral"
+      ],
+      "present": {
+        "1s": {
+          "value": "frémis",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "frémis",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "frémit",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "frémissons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "frémissez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "frémissent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai frémi",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as frémi",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a frémi",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons frémi",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez frémi",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont frémi",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "frémirai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "frémiras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "frémira",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "frémirons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "frémirez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "frémiront",
+          "syllabes": 4
+        }
+      }
+    },
+    "dériver": {
+      "themes": [
+        "mer",
+        "ciel",
+        "mort",
+        "danger"
+      ],
+      "present": {
+        "1s": {
+          "value": "dérive",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "dérives",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "dérive",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "dérivons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "dérivez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "dérivent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai dérivé",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as dérivé",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a dérivé",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons dérivé",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez dérivé",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont dérivé",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "dériverai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "dériveras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "dériverea",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "dériverons",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "déréverez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "dériveront",
+          "syllabes": 5
+        }
+      }
+    },
+    "craquer": {
+      "themes": [
+        "mer",
+        "froid",
+        "danger",
+        "paysage",
+        "mineral"
+      ],
+      "present": {
+        "1s": {
+          "value": "craque",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "craques",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "craque",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "craquons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "craquez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "craquent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai craqué",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as craqué",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a craqué",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons craqué",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez craqué",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont craqué",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "craquerai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "craqueras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "craquera",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "craquerons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "craquerez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "craqueront",
+          "syllabes": 4
+        }
+      }
+    },
+    "courir": {
+      "themes": [
+        "animal"
+      ],
+      "present": {
+        "1s": {
+          "value": "cours",
+          "syllabes": 1
+        },
+        "2s": {
+          "value": "cours",
+          "syllabes": 1
+        },
+        "3s": {
+          "value": "court",
+          "syllabes": 1
+        },
+        "1p": {
+          "value": "courons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "courez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "courent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai couru",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as couru",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a couru",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons couru",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez couru",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont couru",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "courrai",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "courras",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "courra",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "courrons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "courrez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "courront",
+          "syllabes": 3
+        }
+      }
+    },
+    "éclater": {
+      "themes": [
+        "froid",
+        "meteo",
+        "danger",
+        "paysage",
+        "mineral"
+      ],
+      "present": {
+        "1s": {
+          "value": "éclate",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "éclates",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "éclate",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "éclatons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "éclatez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "éclatent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai éclaté",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as éclaté",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a éclaté",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons éclaté",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez éclaté",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont éclaté",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "éclaterai",
+          "syllabes": 5
+        },
+        "2s": {
+          "value": "éclateras",
+          "syllabes": 5
+        },
+        "3s": {
+          "value": "éclatera",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "éclaterons",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "éclaterez",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "éclateront",
+          "syllabes": 5
+        }
+      }
+    },
+    "scintiller": {
+      "themes": [
+        "mineral",
+        "nuit",
+        "froid",
+        "meteo",
+        "mer",
+        "temps",
+        "paysage"
+      ],
+      "present": {
+        "1s": {
+          "value": "scintille",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "scintilles",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "scintille",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "scintillons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "scintillez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "scintillent",
+          "syllabes": 2
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai scintillé",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as scintillé",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a scintillé",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons scintillé",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez scintillé",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont scintillé",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "scintillerai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "scintilleras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "scintillera",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "scintillerons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "scintillerez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "scintilleront",
+          "syllabes": 4
+        }
+      }
+    },
+    "gronder": {
+      "themes": [
+        "froid",
+        "meteo",
+        "danger",
+        "mort",
+        "ciel",
+        "animal",
+        "temps"
+      ],
+      "present": {
+        "1s": {
+          "value": "gronde",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "grondes",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "gronde",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "grondons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "grondez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "grondent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai grondé",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "as grondé",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "a grondé",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "avons grondé",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "avez grondé",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "ont grondé",
+          "syllabes": 3
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "gronderai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "gronderas",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "grondera",
+          "syllabes": 3
+        },
+        "1p": {
+          "value": "gronderons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "gronderez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "gronderont",
+          "syllabes": 4
+        }
+      }
+    },
+    "survivre": {
+      "themes": [
+        "vegetal",
+        "animal",
+        "foyer",
+        "nuit",
+        "danger"
+      ],
+      "present": {
+        "1s": {
+          "value": "survis",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "survis",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "survit",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "survivons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "survivez",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "survivent",
+          "syllabes": 3
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai survécu",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "as survécu",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "a survécu",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "avons survécu",
+          "syllabes": 5
+        },
+        "2p": {
+          "value": "avez survécu",
+          "syllabes": 5
+        },
+        "3p": {
+          "value": "ont survécu",
+          "syllabes": 4
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "survivrai",
+          "syllabes": 4
+        },
+        "2s": {
+          "value": "survivras",
+          "syllabes": 4
+        },
+        "3s": {
+          "value": "survivra",
+          "syllabes": 4
+        },
+        "1p": {
+          "value": "survivrons",
+          "syllabes": 4
+        },
+        "2p": {
+          "value": "survivrez",
+          "syllabes": 4
+        },
+        "3p": {
+          "value": "survivront",
+          "syllabes": 4
+        }
+      }
+    },
+    "être": {
+      "themes": [
+        "*"
+      ],
+      "present": {
+        "1s": {
+          "value": "suis",
+          "syllabes": 1
+        },
+        "2s": {
+          "value": "es",
+          "syllabes": 1
+        },
+        "3s": {
+          "value": "est",
+          "syllabes": 1
+        },
+        "1p": {
+          "value": "sommes",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "êtes",
+          "syllabes": 1
+        },
+        "3p": {
+          "value": "sont",
+          "syllabes": 1
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai été",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "as été",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "a été",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "avons été",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "avez été",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "ont été",
+          "syllabes": 2
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "serai",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "seras",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "sera",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "serons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "serez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "seront",
+          "syllabes": 2
+        }
+      }
+    },
+    "avoir": {
+      "themes": [
+        "*"
+      ],
+      "present": {
+        "1s": {
+          "value": "ai",
+          "syllabes": 1
+        },
+        "2s": {
+          "value": "as",
+          "syllabes": 1
+        },
+        "3s": {
+          "value": "a",
+          "syllabes": 1
+        },
+        "1p": {
+          "value": "avons",
+          "syllabes": 2
+        },
+        "2p": {
+          "value": "avez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "ont",
+          "syllabes": 1
+        }
+      },
+      "passe": {
+        "1s": {
+          "value": "ai eu",
+          "syllabes": 2
+        },
+        "2s": {
+          "value": "as eu",
+          "syllabes": 2
+        },
+        "3s": {
+          "value": "a eu",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "avons eu",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "avez eu",
+          "syllabes": 3
+        },
+        "3p": {
+          "value": "ont eu",
+          "syllabes": 2
+        }
+      },
+      "futur": {
+        "1s": {
+          "value": "aurai",
+          "syllabes": 3
+        },
+        "2s": {
+          "value": "auras",
+          "syllabes": 3
+        },
+        "3s": {
+          "value": "aura",
+          "syllabes": 2
+        },
+        "1p": {
+          "value": "aurons",
+          "syllabes": 3
+        },
+        "2p": {
+          "value": "aurez",
+          "syllabes": 2
+        },
+        "3p": {
+          "value": "auront",
+          "syllabes": 3
+        }
+      }
     }
+  }
 }
-
-

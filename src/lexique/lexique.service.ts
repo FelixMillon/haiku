@@ -23,13 +23,13 @@ export class LexiqueService {
   createNom(theme: string,nom: string, body: Nom): boolean{
     let noms = this.getNoms();
     noms[theme][nom] = body;
-    const updated = updateJson("noms.json",noms);
+    const updated = updateJson("./public/assets/mots/noms.json",noms);
     return updated;
   }
   deleteNom(theme: string,nom: string): boolean{
     let noms = this.getNoms();
     delete noms[theme][nom];
-    const updated = updateJson("noms.json",noms); 
+    const updated = updateJson("./public/assets/mots/noms.json",noms); 
     return updated;
   }
 
@@ -39,13 +39,13 @@ export class LexiqueService {
   createPronom(type: string, plurality: string, pronom: string, body: Pronom): boolean{
     let pronoms = this.getPronoms();
     pronoms[type][plurality][pronom] = body;
-    const updated = updateJson("pronoms.json",pronoms);
+    const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
     return updated;
   }
   deletePronom(type: string, plurality: string, pronom: string): boolean{
     let pronoms = this.getPronoms();
     delete pronoms[type][plurality][pronom];
-    const updated = updateJson("pronoms.json",pronoms);
+    const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
     return updated;
   }
   getPronomsByType(type: string): object {
@@ -73,13 +73,13 @@ export class LexiqueService {
   createAdjectif(theme: string,genre: string,adjectif: string, body: Adjectif): boolean {
     let adjectifs = this.getAdjectifs();
     adjectifs[theme][genre][adjectif] = body;
-    const updated = updateJson("adjectifs.json",adjectifs);
+    const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
     return updated;
   }
   deleteAdjectif(theme: string,genre: string,adjectif: string): boolean {
     let adjectifs = this.getAdjectifs();
     delete adjectifs[theme][genre][adjectif];
-    const updated = updateJson("adjectifs.json",adjectifs);
+    const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
     return updated;
   }
 
@@ -95,13 +95,13 @@ export class LexiqueService {
   createVerbe(theme: string,verbe: string, body: Verbe): boolean {
     let verbes = this.getVerbes();
     verbes[theme][verbe] = body;
-    const updated = updateJson("verbes.json",adjectifs);
+    const updated = updateJson("./public/assets/mots/verbes.json",verbes);
     return updated;
   }
   deleteVerbe(theme: string,verbe: string): boolean {
     let verbes = this.getVerbes();
     delete verbes[theme][verbe];
-    const updated = updateJson("verbes.json",adjectifs);
+    const updated = updateJson("./public/assets/mots/verbes.json",verbes);
     return updated;
   }
 }

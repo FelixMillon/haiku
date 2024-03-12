@@ -468,6 +468,24 @@
       "genre": "m",
       "pluriel": "std",
       "liaison": 1
+    },
+    "test4": {
+      "themes": [
+        "test"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
+    },
+    "test3": {
+      "themes": [
+        "test"
+      ],
+      "syllabes": 1,
+      "genre": "m",
+      "pluriel": "std",
+      "liaison": 0
     }
   }
 }
