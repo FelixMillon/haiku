@@ -1,4 +1,4 @@
-import { Controller, Get, Post, Put, Param, Body } from '@nestjs/common';
+import { Controller, Get, Post, Put, Delete, Param, Body } from '@nestjs/common';
 import { LexiqueService } from './lexique.service';
 import { Nom } from '../types/nom';
 @Controller('lexique')
@@ -27,7 +27,8 @@ export class LexiqueController {
     return this.lexiqueService.getNomsByThemeAndName(theme,nom); 
   }
   @Post('noms/:theme/:nom')
-  create(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
+  createNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
+    
     if(!this.authorizedThemes.includes(theme)){
       throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
     }
@@ -35,19 +36,31 @@ export class LexiqueController {
     if(nom in nomsExistants){
       throw new Error("le nom existe déja")
     }
-    if(!Number.isInteger(body['syllabes'])){
-      throw new Error("syllabes doit être un entier")
-    }
-    if(![0,1].includes(body['liaison'])){
-      throw new Error("liaison doit être égale à 1 ou 0")
-    }
-    if(!(typeof body['pluriel'] === 'string')){
-      throw new Error("liaison doit être égale à 1 ou 0")
-    }
-    if(!["f","m"].includes(body['genre'])){
-      throw new Error("liaison doit être égale à 1 ou 0")
-    }
+    this.checkIsValidNom(body)
     return this.lexiqueService.createNom(theme,nom,body);
+  }
+  @Put('noms/:theme/:nom')
+  updateNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    const nomsExistants = this.lexiqueService.getNomsByTheme(theme);
+    if(!(nom in nomsExistants)){
+      throw new Error("le nom n'existe pas")
+    }
+    this.checkIsValidNom(body)
+    return this.lexiqueService.createNom(theme,nom,body);
+  }
+  @Delete('noms/:theme/:nom')
+  deleteNom(@Param('theme') theme: string,@Param('nom') nom: string) {
+    if(!this.authorizedThemes.includes(theme)){
+      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+    }
+    let nomsExistants = this.lexiqueService.getNomsByTheme(theme);
+    if(!(nom in nomsExistants)){
+      throw new Error("le nom n'existe pas")
+    }
+    return this.lexiqueService.deleteNom(theme,nom);
   }
 
   @Get('pronoms')
@@ -126,5 +139,30 @@ export class LexiqueController {
     <a href="/lexique/verbes/">/lexique/verbes/</a><br>
     <a href="/">accueil</a><br>
     `;
+  }
+  checkIsValidNom(body: Nom): void{
+    if(!Number.isInteger(body['syllabes'])){
+      throw new Error("syllabes doit être un entier")
+    }
+    if(![0,1].includes(body['liaison'])){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+    if(!(typeof body['pluriel'] === 'string')){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
+    if(!(typeof body['themes'] === 'object')){
+      throw new Error("liaison doit être une liste")
+    }
+    for(let index in body['themes']){
+      if(!Number.isInteger(parseInt(index))){
+        throw new Error("liaison doit être une liste")
+      }
+      if(!(typeof body['themes'][index] === 'string')){
+        throw new Error("Chaque thème doit être une chaine de caractère")
+      }
+    }
+    if(!["f","m"].includes(body['genre'])){
+      throw new Error("liaison doit être égale à 1 ou 0")
+    }
   }
 }

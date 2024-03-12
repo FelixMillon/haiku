@@ -23,6 +23,12 @@ export class LexiqueService {
     const updated = updateJson("noms.json",noms);
     return updated;
   }
+  deleteNom(theme: string,nom: string){
+    let noms = this.getNoms();
+    delete noms[theme][nom];
+    const updated = updateJson("noms.json",noms);
+    return updated;
+  }
   getPronoms(): object {
     return pronoms;
   }
