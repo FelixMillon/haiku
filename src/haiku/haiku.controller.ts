@@ -93,7 +93,7 @@ export class HaikuController {
         }
         // placer la majuscule
         let vers = `${selectedPronom}`.charAt(0).toUpperCase();
-        vers += `${selectedPronom}${liaison}${selectedName} ${selectedAdj} ${conjuguedVerbe}`.slice(1);
+        vers += `${selectedPronom}${liaison}${selectedName} ${selectedAdj} ${conjuguedVerbe}: ${syllabes}`.slice(1);
         poeme = poeme + vers +'<br>'
       }
       return poeme + '<br><br><a href="/">accueil</a>';

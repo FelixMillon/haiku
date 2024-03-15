@@ -591,6 +591,32 @@
       "res": {
         "code": 200
       }
+    },
+    {
+      "req": {
+        "request": "/lexique/noms/hiver/test",
+        "body": {
+          "themes": [
+            "test"
+          ],
+          "syllabes": 1,
+          "genre": "m",
+          "pluriel": "std",
+          "liaison": 0
+        }
+      },
+      "res": {
+        "code": 200
+      }
+    },
+    {
+      "req": {
+        "request": "/lexique/noms/hiver/test",
+        "body": {}
+      },
+      "res": {
+        "code": 200
+      }
     }
   ]
 }

@@ -20,61 +20,67 @@ export class LexiqueController {
   @Get('noms/:theme')
   getNomsByTheme(@Param('theme') theme: string): object {
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": "le thème d'un haiku est toujours printemps, été, automne ou hiver"}
     }
     return this.lexiqueService.getNomsByTheme(theme);
   }
   @Get('noms/:theme/:nom')
   getNom(@Param('theme') theme: string,@Param('nom') nom: string): object {
     if(!(typeof nom === 'string')){
-      throw new Error("nom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le nom '${nom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": "le thème d'un haiku est toujours printemps, été, automne ou hiver"}
     }
     return this.lexiqueService.getNom(theme,nom); 
   }
   @Post('noms/:theme/:nom')
-  createNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
+  createNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string): object {
     if(!(typeof nom === 'string')){
-      throw new Error("nom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le nom '${nom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const nomsExistants = this.lexiqueService.getNomsByTheme(theme);
     if(nom in nomsExistants){
-      throw new Error("le nom existe déja")
+      return {"code": 400, "msg": `le nom '${nom}' existe déja`}
     }
-    this.checkIsValidNom(body)
+    const errors = this.checkIsValidNom(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createNom(theme,nom,body);
   }
   @Put('noms/:theme/:nom')
-  updateNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string) {
+  updateNom(@Body() body: Nom,@Param('theme') theme: string,@Param('nom') nom: string): object {
     if(!(typeof nom === 'string')){
-      throw new Error("nom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le nom '${nom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const nomsExistants = this.lexiqueService.getNomsByTheme(theme);
     if(!(nom in nomsExistants)){
-      throw new Error("le nom n'existe pas")
+      return {"code": 400, "msg": `le nom '${nom}' n'existe pas`}
     }
-    this.checkIsValidNom(body)
+    const errors = this.checkIsValidNom(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createNom(theme,nom,body);
   }
   @Delete('noms/:theme/:nom')
   deleteNom(@Param('theme') theme: string,@Param('nom') nom: string) {
     if(!(typeof nom === 'string')){
-      throw new Error("nom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le nom '${nom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     let nomsExistants = this.lexiqueService.getNomsByTheme(theme);
     if(!(nom in nomsExistants)){
-      throw new Error("le nom n'existe pas")
+      return {"code": 400, "msg": `le nom '${nom}' n'existe pas`}
     }
     return this.lexiqueService.deleteNom(theme,nom);
   }
@@ -86,30 +92,30 @@ export class LexiqueController {
   @Get('pronoms/:type')
   getPronomsByType(@Param('type') type: string): object {
     if(!this.authorizedTypes.includes(type)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être : ${this.authorizedTypes.join(' ou ')}`}
     }
     return this.lexiqueService.getPronomsByType(type);
   }
   @Get('pronoms/:type/:plurality')
   getPronomsByTypeAndPlurality(@Param('type') type: string,@Param('plurality') plurality: string): object {
     if(!this.authorizedTypes.includes(type)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être : ${this.authorizedTypes.join(' ou ')}`}
     }
     if(!this.authorizedPlurality.includes(plurality)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     return this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
   }
   @Get('pronoms/:type/:plurality/:pronom')
   getPronom(@Param('type') type: string,@Param('plurality') plurality: string,@Param('pronom') pronom: string): object {
     if(!(typeof pronom === 'string')){
-      throw new Error("pronom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le pronom '${pronom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedTypes.includes(type)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être : ${this.authorizedTypes.join(' ou ')}`}
     }
     if(!this.authorizedPlurality.includes(plurality)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     return this.lexiqueService.getPronom(type,plurality,pronom);
   }
@@ -121,19 +127,22 @@ export class LexiqueController {
       @Param('pronom') pronom: string
     ) {
     if(!(typeof pronom === 'string')){
-      throw new Error("pronom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le pronom '${pronom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedTypes.includes(type)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être : ${this.authorizedTypes.join(' ou ')}`}
     }
     if(!this.authorizedPlurality.includes(plurality)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
     if(pronom in pronomsExistants){
-      throw new Error("le pronom existe déja")
+      return {"code": 400, "msg": `le pronom '${pronom}' existe déja`}
     }
-    this.checkIsValidPronom(body)
+    const errors = this.checkIsValidPronom(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createPronom(type,plurality,pronom,body);
   }
   @Put('pronoms/:type/:plurality/:pronom')
@@ -144,19 +153,22 @@ export class LexiqueController {
       @Param('pronom') pronom: string
     ) {
     if(!(typeof pronom === 'string')){
-      throw new Error("pronom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le pronom '${pronom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedTypes.includes(type)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être : ${this.authorizedTypes.join(' ou ')}`}
     }
     if(!this.authorizedPlurality.includes(plurality)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
     if(!(pronom in pronomsExistants)){
-      throw new Error("le pronom n'existe pas")
+      return {"code": 400, "msg": `le pronom '${pronom}' n'existe pas`}
     }
-    this.checkIsValidPronom(body)
+    const errors = this.checkIsValidPronom(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createPronom(type,plurality,pronom,body);
   }
   @Delete('pronoms/:type/:plurality/:pronom')
@@ -166,17 +178,17 @@ export class LexiqueController {
     @Param('pronom') pronom: string
   ) {
     if(!(typeof pronom === 'string')){
-      throw new Error("pronom doit être une chaine de caractere")
+      return {"code": 400, "msg": `le pronom '${pronom}' doit être une chaine de caractere`}
     }
     if(!this.authorizedTypes.includes(type)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedTypes.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être : ${this.authorizedTypes.join(' ou ')}`}
     }
     if(!this.authorizedPlurality.includes(plurality)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`)
+      return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
     if(!(pronom in pronomsExistants)){
-      throw new Error("le pronom n'existe pas")
+      return {"code": 400, "msg": `le pronom '${pronom}' n'existe pas`}
     }
     return this.lexiqueService.deletePronom(type,plurality,pronom);
   }
@@ -188,30 +200,30 @@ export class LexiqueController {
   @Get('adjectifs/:theme')
   getAdjectifsByTheme(@Param('theme') theme: string): object {
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     return this.lexiqueService.getAdjectifsByTheme(theme);
   }
   @Get('adjectifs/:theme/:genre')
   getAdjectifsByThemeAndGenre(@Param('theme') theme: string,@Param('genre') genre: string): object {
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     if(!this.authorizedGenre.includes(genre)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+      return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     return this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
   }
   @Get('adjectifs/:theme/:genre/:adjectif')
   getAdjectif(@Param('theme') theme: string,@Param('genre') genre: string,@Param('adjectif') adjectif: string): object {
     if(!(typeof adjectif === 'string')){
-      throw new Error("adjectif doit être une chaine de caractere")
+      return {"code": 400, "msg": `l'adjectif '${adjectif}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     if(!this.authorizedGenre.includes(genre)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+      return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     return this.lexiqueService.getAdjectif(theme,genre,adjectif);
   }
@@ -223,19 +235,22 @@ export class LexiqueController {
     @Param('adjectif') adjectif: string
   ) {
     if(!(typeof adjectif === 'string')){
-      throw new Error("adjectif doit être une chaine de caractere")
+      return {"code": 400, "msg": `l'adjectif '${adjectif}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     if(!this.authorizedGenre.includes(genre)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+      return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
     if(adjectif in adjectifsExistants){
-      throw new Error("l'adjectif existe déja")
+      return {"code": 400, "msg": `l'adjectif '${adjectif}' existe déja`}
     }
-    this.checkIsValidAdjectif(body)
+    const errors = this.checkIsValidAdjectif(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createAdjectif(theme,genre,adjectif,body);
   }
   @Put('adjectifs/:theme/:genre/:adjectif')
@@ -246,19 +261,22 @@ export class LexiqueController {
     @Param('adjectif') adjectif: string
   ) {
     if(!(typeof adjectif === 'string')){
-      throw new Error("adjectif doit être une chaine de caractere")
+      return {"code": 400, "msg": `L'adjectif '${adjectif}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `Le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     if(!this.authorizedGenre.includes(genre)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+      return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
     if(!(adjectif in adjectifsExistants)){
-      throw new Error("l'adjectif n'existe pas")
+      return {"code": 400, "msg": `L'adjectif '${adjectif}' n'existe pas`}
     }
-    this.checkIsValidAdjectif(body)
+    const errors = this.checkIsValidAdjectif(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createAdjectif(theme,genre,adjectif,body);
   }
   @Delete('adjectifs/:theme/:genre/:adjectif')
@@ -268,17 +286,17 @@ export class LexiqueController {
     @Param('adjectif') adjectif: string
   ) {
     if(!(typeof adjectif === 'string')){
-      throw new Error("adjectif doit être une chaine de caractere")
+      return {"code": 400, "msg": `l'adjectif '${adjectif}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     if(!this.authorizedGenre.includes(genre)){
-      throw new Error(`Les pronoms peuvent être soit: ${this.authorizedGenre.join(' soit ')}`)
+      return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
     if(!(adjectif in adjectifsExistants)){
-      throw new Error("l'adjectif n'existe pas")
+      return {"code": 400, "msg": `L'adjectif '${adjectif}' n'existe pas`}
     }
     return this.lexiqueService.deleteAdjectif(theme,genre,adjectif);
   }
@@ -290,7 +308,7 @@ export class LexiqueController {
   @Get('verbes/:theme')
   getVerbesByTheme(@Param('theme') theme: string): object {
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     return this.lexiqueService.getVerbesByTheme(theme);
   }
@@ -300,10 +318,10 @@ export class LexiqueController {
     @Param('verbe') verbe: string
   ): object {
     if(!(typeof verbe === 'string')){
-      throw new Error("verbe doit être une chaine de caractere")
+      return {"code": 400, "msg": `Le verbe '${verbe}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     return this.lexiqueService.getVerbe(theme,verbe);
   }
@@ -314,16 +332,19 @@ export class LexiqueController {
     @Param('verbe') verbe: string
   ) {
     if(!(typeof verbe === 'string')){
-      throw new Error("verbe doit être une chaine de caractere")
+      return {"code": 400, "msg": `Le verbe '${verbe}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
     if(verbe in verbesExistants){
-      throw new Error("le verbe existe déja")
+      return {"code": 400, "msg": `le verbe '${verbe}' existe déja`}
     }
-    this.checkIsValidVerbe(body)
+    const errors = this.checkIsValidVerbe(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createVerbe(theme,verbe,body);
   }
   @Put('verbes/:theme/:verbe')
@@ -333,16 +354,19 @@ export class LexiqueController {
     @Param('verbe') verbe: string
   ) {
     if(!(typeof verbe === 'string')){
-      throw new Error("verbe doit être une chaine de caractere")
+      return {"code": 400, "msg": `Le verbe '${verbe}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
     if(!(verbe in verbesExistants)){
-      throw new Error("le verbe n'existe pas")
+      return {"code": 400, "msg": `le verbe '${verbe}' n'existe pas`}
     }
-    this.checkIsValidVerbe(body)
+    const errors = this.checkIsValidVerbe(body)
+    if(!(typeof errors == 'undefined')){
+      return errors;
+    }
     return this.lexiqueService.createVerbe(theme,verbe,body);
   }
   @Delete('verbes/:theme/:verbe')
@@ -351,14 +375,14 @@ export class LexiqueController {
     @Param('verbe') verbe: string
   ) {
     if(!(typeof verbe === 'string')){
-      throw new Error("verbe doit être une chaine de caractere")
+      return {"code": 400, "msg": `Le verbe '${verbe}' doit être une chaine de caractere`}
     }
     if(!this.authorizedThemes.includes(theme)){
-      throw new Error("le thème d'un haiku est toujours printemps, été, automne ou hiver")
+      return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
     if(!(verbe in verbesExistants)){
-      throw new Error("le verbe n'existe pas")
+      return {"code": 400, "msg": `le verbe '${verbe}' n'existe pas`}
     }
     return this.lexiqueService.deleteVerbe(theme,verbe);
   }
@@ -373,112 +397,119 @@ export class LexiqueController {
     <a href="/">accueil</a><br>
     `;
   }
-  checkIsValidNom(body: Nom): void{
+  checkIsValidNom(body: Nom): object | void{
     if(!Number.isInteger(body['syllabes'])){
-      throw new Error("syllabes doit être un entier")
+      return {"code": 400, "msg": `syllabes doit être un entier`}
     }
     if(body['syllabes']<1){
-      throw new Error("syllabes doit être supérieur à 0")
+      return {"code": 400, "msg": `syllabes doit être supérieur à 0`}
     }
     if(![0,1].includes(body['liaison'])){
-      throw new Error("liaison doit être égale à 1 ou 0")
+      return {"code": 400, "msg": `liaison doit être égale à 1 ou 0`}
     }
     if(!(typeof body['pluriel'] === 'string')){
-      throw new Error("liaison doit être égale à 1 ou 0")
+      return {"code": 400, "msg": "pluriel doit être de type string"}
     }
     if(!(typeof body['themes'] === 'object')){
-      throw new Error("liaison doit être une liste")
+      return {"code": 400, "msg": "themes doit être une liste"}
     }
     for(let index in body['themes']){
       if(!Number.isInteger(parseInt(index))){
-        throw new Error("liaison doit être une liste")
+        return {"code": 400, "msg": "themes doit être une liste"}
       }
       if(!(typeof body['themes'][index] === 'string')){
-        throw new Error("Chaque thème doit être une chaine de caractère")
+        return {"code": 400, "msg": "Chaque thème doit être une chaine de caractère"}
       }
     }
     if(!["f","m"].includes(body['genre'])){
-      throw new Error("liaison doit être égale à 1 ou 0")
+      return {"code": 400, "msg": "genre doit être égal à 'm' ou 'f'"}
     }
   }
-  checkIsValidPronom(body: Pronom): void{
+  checkIsValidPronom(body: Pronom): object | void{
     if(!Number.isInteger(body['syllabes'])){
-      throw new Error("syllabes doit être un entier")
-    }
-    if(body['syllabes']<0){
-      throw new Error("syllabes doit être supérieur ou égale à 0")
-    }
-    if(![0,1].includes(body['liaison'])){
-      throw new Error("liaison doit être égale à 1 ou 0")
-    }
-    if(!["f","m","i"].includes(body['genre'])){
-      throw new Error("liaison doit être égale à 1 ou 0")
-    }
-  }
-  checkIsValidAdjectif(body: Adjectif): void{
-    if(!(typeof body['pluriel'] === 'string')){
-      throw new Error("liaison doit être égale à 1 ou 0")
-    }
-    if(!Number.isInteger(body['syllabes'])){
-      throw new Error("syllabes doit être un entier")
+      return {"code": 400, "msg": `syllabes doit être un entier`}
     }
     if(body['syllabes']<1){
-      throw new Error("syllabes doit être supérieur à 0")
+      return {"code": 400, "msg": `syllabes doit être supérieur à 0`}
+    }
+    if(![0,1].includes(body['liaison'])){
+      return {"code": 400, "msg": `liaison doit être égale à 1 ou 0`}
+    }
+    if(!["f","m","i"].includes(body['genre'])){
+      return {"code": 400, "msg": "genre doit être égal à 'm' ou 'f' ou 'i'"}
+    }
+  }
+  checkIsValidAdjectif(body: Adjectif): object | void{
+    if(!(typeof body['pluriel'] === 'string')){
+      return {"code": 400, "msg": "pluriel doit être de type string"}
+    }
+    if(!Number.isInteger(body['syllabes'])){
+      return {"code": 400, "msg": `syllabes doit être un entier`}
+    }
+    if(body['syllabes']<1){
+      return {"code": 400, "msg": `syllabes doit être supérieur à 0`}
     }
     if(!(typeof body['themes'] === 'object')){
-      throw new Error("liaison doit être une liste")
+      return {"code": 400, "msg": "themes doit être une liste"}
     }
     for(let index in body['themes']){
       if(!Number.isInteger(parseInt(index))){
-        throw new Error("liaison doit être une liste")
+        return {"code": 400, "msg": "themes doit être une liste"}
       }
       if(!(typeof body['themes'][index] === 'string')){
-        throw new Error("Chaque thème doit être une chaine de caractère")
+        return {"code": 400, "msg": "Chaque thème doit être une chaine de caractère"}
       }
     }
   }
-  checkIsValidVerbe(body: Verbe): void{
+  checkIsValidVerbe(body: Verbe): object | void{
     if(!(typeof body['themes'] === 'object')){
-      throw new Error("liaison doit être une liste")
+      return {"code": 400, "msg": "themes doit être une liste"}
     }
     for(let index in body['themes']){
       if(!Number.isInteger(parseInt(index))){
-        throw new Error("liaison doit être une liste")
+        return {"code": 400, "msg": "themes doit être une liste"}
       }
       if(!(typeof body['themes'][index] === 'string')){
-        throw new Error("Chaque thème doit être une chaine de caractère")
+        return {"code": 400, "msg": "Chaque thème doit être une chaine de caractère"}
       }
     }
     const nombreDeCle = Object.keys(body).length;
     if(!(Object.keys(body).length === 4)){
-      throw new Error("Un verbe est caractérisé par 4 élements : theme, present, passe, futur")
+      return {"code": 400, "msg": "l'objet verbe doit avoir 4 clés : theme, present, passe, futur"}
     }
     for(let element in body){
       if(element != "themes"){
         if(!this.authorizedTimes.includes(element)){
-          throw new Error(`Un temps doit avoir l'une des valeurs suivantes : ${this.authorizedTimes.join(', ')}`)
+          return {"code": 400, "msg": `Un temps doit avoir l'une des valeurs suivantes : ${this.authorizedTimes.join(', ')}`}
         }
-        this.checkIsValidVerbeTemps(body[element])
+        const errors = this.checkIsValidVerbeTemps(body[element])
+        if(!(typeof errors == 'undefined')){
+          return errors;
+        }
       }
     }
   }
-  checkIsValidVerbeTemps(temps: VerbeTemps): void{
+  checkIsValidVerbeTemps(temps: VerbeTemps): object | void{
     for(let personne in temps){
       if(!this.authorizedPersons.includes(personne)){
-        throw new Error(`Une personne doit avoir une des valeur suivante : ${this.authorizedPersons.join(', ')}`)
+        return {"code": 400, "msg": `Une personne doit avoir une des valeur suivante : ${this.authorizedPersons.join(', ')}; valeur invalide détéctée: ${personne}`}
       }
-      this.checkIsValidVerbeTempsPersonne(temps[personne])
+      const errors = this.checkIsValidVerbeTempsPersonne(temps[personne], personne)
+      if(!(typeof errors == 'undefined')){
+        return errors;
+      }
     }
   }
-  checkIsValidVerbeTempsPersonne(personne: VerbeTempsPersonne): void{
+  checkIsValidVerbeTempsPersonne(personne: VerbeTempsPersonne, cle: string): object | void{
+    console.log(personne)
     if(!(typeof personne['value'] === 'string')){
-      throw new Error("La valeur conjuguée doit être de type string")
+      return {"code": 400, "msg": `La valeur conjuguée de la personne ${cle} doit être de type string`}
     }
     if(!Number.isInteger(personne['syllabes'])){
-      throw new Error("syllabes doit être un entier")
+      return {"code": 400, "msg": `le nombre de syllabes de la personne ${cle} doit être un entier`}
     }
     if(personne['syllabes'] <= 0){
-      throw new Error("syllabes doit être supérieur à 0")
+      return {"code": 400, "msg": `le nombre de syllabes de la personne ${cle} doit être supérieur à 0`}
     }
   }
 
