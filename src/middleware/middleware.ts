@@ -13,11 +13,9 @@ export class HaikuMiddleware implements NestMiddleware {
         "body": req.body
       },
       'res': {
-        "code": res.statusCode,
-        // "data": res.json()
+        "code": res.statusCode
       }
     };
-
     logs = logs || [];
     logs.push(interaction);
 
