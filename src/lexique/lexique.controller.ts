@@ -501,7 +501,6 @@ export class LexiqueController {
     }
   }
   checkIsValidVerbeTempsPersonne(personne: VerbeTempsPersonne, cle: string): object | void{
-    console.log(personne)
     if(!(typeof personne['value'] === 'string')){
       return {"code": 400, "msg": `La valeur conjuguée de la personne ${cle} doit être de type string`}
     }
