@@ -12,13 +12,28 @@ import { updateJson } from '../bdd/manage_json';
 @Injectable()
 export class LexiqueService {
   getNoms(): object {
-    return noms;
+    try{
+      const data = noms
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading noms`};
+    }
   }
   getNomsByTheme(theme: string): object {
-    return noms[theme];
+    try{
+      const data = noms[theme]
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading noms by theme`};
+    }
   }
   getNom(theme: string,nom: string): object{
-    return noms[theme][nom];
+    try{
+      const data = noms[theme][nom];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading nom '${nom}'`};
+    }
   }
   createNom(theme: string,nom: string, body: Nom): object{
     try{
@@ -27,9 +42,8 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/noms.json",noms);
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while inserting ${nom}`, "inserted": false};
+      return {"code": 500, "message": `error while inserting '${nom}'`, "inserted": false};
     }
-
   }
   deleteNom(theme: string,nom: string): object{
     try{
@@ -38,12 +52,41 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/noms.json",noms); 
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while deleting ${nom}`, "deleted": false};
+      return {"code": 500, "message": `error while deleting '${nom}'`, "deleted": false};
     }
   }
 
   getPronoms(): object {
-    return pronoms;
+    try{
+      const data = pronoms
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronoms`};
+    }
+  }
+  getPronomsByType(type: string): object {
+    try{
+      const data = pronoms[type];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronoms by type '${type}'`};
+    }
+  }
+  getPronomsByTypeAndPlurality(type: string,plurality: string): object{
+    try{
+      const data = pronoms[type][plurality];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronoms by type '${type}' and plurality '${plurality}'`};
+    }
+  }
+  getPronom(type: string,plurality: string, pronom: string): object{
+    try{
+      const data = pronoms[type][plurality][pronom];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronom '${pronom}'`};
+    }
   }
   createPronom(type: string, plurality: string, pronom: string, body: Pronom): object{
     try{
@@ -52,7 +95,7 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while inserting ${pronom}`, "inserted": false};
+      return {"code": 500, "message": `error while inserting '${pronom}'`, "inserted": false};
     }
   }
   deletePronom(type: string, plurality: string, pronom: string): object{
@@ -62,30 +105,41 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while deleting ${pronom}`, "deleted": false};
+      return {"code": 500, "message": `error while deleting '${pronom}'`, "deleted": false};
     }
-  }
-  getPronomsByType(type: string): object {
-    return pronoms[type];
-  }
-  getPronomsByTypeAndPlurality(type: string,plurality: string): object{
-    return pronoms[type][plurality];
-  }
-  getPronom(type: string,plurality: string, pronom: string): object{
-    return pronoms[type][plurality][pronom];
   }
 
   getAdjectifs(): object {
-    return adjectifs;
+    try{
+      const data = adjectifs
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectifs`};
+    }
   }
   getAdjectifsByTheme(theme: string): object {
-    return adjectifs[theme];
+    try{
+      const data = adjectifs[theme];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectifs by theme '${theme}'`};
+    }
   }
   getAdjectifsByThemeAndGenre(theme: string,genre: string): object {
-    return adjectifs[theme][genre];
+    try{
+      const data = adjectifs[theme][genre];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectifs by theme '${theme}' and genre '${genre}'`};
+    }
   }
   getAdjectif(theme: string,genre: string,adjectif: string): object {
-    return adjectifs[theme][genre][adjectif];
+    try{
+      const data = adjectifs[theme][genre][adjectif];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectif '${adjectif}'`};
+    }
   }
   createAdjectif(theme: string,genre: string,adjectif: string, body: Adjectif): object {
     try{
@@ -94,7 +148,7 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while inserting ${adjectif}`, "inserted": false};
+      return {"code": 500, "message": `error while inserting '${adjectif}'`, "inserted": false};
     }
 
   }
@@ -105,19 +159,34 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while deleting ${adjectif}`, "deleted": false};
+      return {"code": 500, "message": `error while deleting '${adjectif}'`, "deleted": false};
     }
 
   }
 
   getVerbes(): object {
-    return verbes;
+    try{
+      const data = verbes;
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading verbes`};
+    }
   }
   getVerbesByTheme(theme: string): object {
-    return verbes[theme];
+    try{
+      const data = verbes[theme];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading verbes by theme : '${theme}'`};
+    }
   }
   getVerbe(theme: string, verbe: string): object {
-    return verbes[theme][verbe];
+    try{
+      const data = verbes[theme][verbe];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading verbe '${verbe}'`};
+    }
   }
   createVerbe(theme: string,verbe: string, body: Verbe): object {
     try{
@@ -126,7 +195,7 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/verbes.json",verbes);
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while inserting ${verbe}`, "inserted": false};
+      return {"code": 500, "message": `error while inserting '${verbe}'`, "inserted": false};
     }
   }
   deleteVerbe(theme: string,verbe: string): object {
@@ -136,7 +205,7 @@ export class LexiqueService {
       const updated = updateJson("./public/assets/mots/verbes.json",verbes);
       return {"code": 200, "inserted": updated};
     }catch{
-      return {"code": 500, "message": `error while deleting ${verbe}`, "deleted": false};
+      return {"code": 500, "message": `error while deleting '${verbe}'`, "deleted": false};
     }
   }
 }

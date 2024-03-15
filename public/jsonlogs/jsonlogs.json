@@ -617,6 +617,115 @@
       "res": {
         "code": 200
       }
+    },
+    {
+      "req": {
+        "request": "/lexique/verbes/hiver/tester",
+        "body": {
+          "themes": [
+            "test"
+          ],
+          "present": {
+            "1s": {
+              "value": "teste",
+              "syllabes": 1
+            },
+            "2s": {
+              "value": "testes",
+              "syllabes": 2
+            },
+            "3s": {
+              "value": "teste",
+              "syllabes": 2
+            },
+            "1p": {
+              "value": "testons",
+              "syllabes": 0
+            },
+            "2p": {
+              "value": "testez",
+              "syllabes": 2
+            },
+            "3p": {
+              "value": "testent",
+              "syllabes": 2
+            }
+          },
+          "passe": {
+            "1s": {
+              "value": "ai testé",
+              "syllabes": 3
+            },
+            "2s": {
+              "value": "as testé",
+              "syllabes": 3
+            },
+            "3s": {
+              "value": "a testé",
+              "syllabes": 3
+            },
+            "1p": {
+              "value": "avons testé",
+              "syllabes": 4
+            },
+            "2p": {
+              "value": "avez testé",
+              "syllabes": 4
+            },
+            "3p": {
+              "value": "ont testé",
+              "syllabes": 3
+            }
+          },
+          "futur": {
+            "1s": {
+              "value": "testerai",
+              "syllabes": 4
+            },
+            "2s": {
+              "value": "testeras",
+              "syllabes": 4
+            },
+            "3s": {
+              "value": "testera",
+              "syllabes": 4
+            },
+            "1p": {
+              "value": "testerons",
+              "syllabes": 4
+            },
+            "2p": {
+              "value": "testerez",
+              "syllabes": 4
+            },
+            "3p": {
+              "value": "testeront",
+              "syllabes": 4
+            }
+          }
+        }
+      },
+      "res": {
+        "code": 200
+      }
+    },
+    {
+      "req": {
+        "request": "/lexique/",
+        "body": {}
+      },
+      "res": {
+        "code": 200
+      }
+    },
+    {
+      "req": {
+        "request": "/lexique/noms/",
+        "body": {}
+      },
+      "res": {
+        "code": 200
+      }
     }
   ]
 }
