@@ -43,7 +43,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const nomsExistants = this.lexiqueService.getNomsByTheme(theme);
-    if(nom in nomsExistants){
+    if(nom in nomsExistants["data"]){
       return {"code": 400, "msg": `le nom '${nom}' existe déja`}
     }
     const errors = this.checkIsValidNom(body)
@@ -61,7 +61,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const nomsExistants = this.lexiqueService.getNomsByTheme(theme);
-    if(!(nom in nomsExistants)){
+    if(!(nom in nomsExistants["data"])){
       return {"code": 400, "msg": `le nom '${nom}' n'existe pas`}
     }
     const errors = this.checkIsValidNom(body)
@@ -79,7 +79,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     let nomsExistants = this.lexiqueService.getNomsByTheme(theme);
-    if(!(nom in nomsExistants)){
+    if(!(nom in nomsExistants["data"])){
       return {"code": 400, "msg": `le nom '${nom}' n'existe pas`}
     }
     return this.lexiqueService.deleteNom(theme,nom);
@@ -136,7 +136,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
-    if(pronom in pronomsExistants){
+    if(pronom in pronomsExistants["data"]){
       return {"code": 400, "msg": `le pronom '${pronom}' existe déja`}
     }
     const errors = this.checkIsValidPronom(body)
@@ -162,7 +162,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
-    if(!(pronom in pronomsExistants)){
+    if(!(pronom in pronomsExistants["data"])){
       return {"code": 400, "msg": `le pronom '${pronom}' n'existe pas`}
     }
     const errors = this.checkIsValidPronom(body)
@@ -187,7 +187,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `Les pronoms peuvent être soit: ${this.authorizedPlurality.join(' soit ')}`}
     }
     const pronomsExistants = this.lexiqueService.getPronomsByTypeAndPlurality(type,plurality);
-    if(!(pronom in pronomsExistants)){
+    if(!(pronom in pronomsExistants["data"])){
       return {"code": 400, "msg": `le pronom '${pronom}' n'existe pas`}
     }
     return this.lexiqueService.deletePronom(type,plurality,pronom);
@@ -244,7 +244,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
-    if(adjectif in adjectifsExistants){
+    if(adjectif in adjectifsExistants["data"]){
       return {"code": 400, "msg": `l'adjectif '${adjectif}' existe déja`}
     }
     const errors = this.checkIsValidAdjectif(body)
@@ -270,7 +270,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
-    if(!(adjectif in adjectifsExistants)){
+    if(!(adjectif in adjectifsExistants["data"])){
       return {"code": 400, "msg": `L'adjectif '${adjectif}' n'existe pas`}
     }
     const errors = this.checkIsValidAdjectif(body)
@@ -295,7 +295,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `Les adjectifs peuvent être soit: ${this.authorizedGenre.join(' soit ')}`}
     }
     const adjectifsExistants = this.lexiqueService.getAdjectifsByThemeAndGenre(theme,genre);
-    if(!(adjectif in adjectifsExistants)){
+    if(!(adjectif in adjectifsExistants["data"])){
       return {"code": 400, "msg": `L'adjectif '${adjectif}' n'existe pas`}
     }
     return this.lexiqueService.deleteAdjectif(theme,genre,adjectif);
@@ -338,7 +338,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
-    if(verbe in verbesExistants){
+    if(verbe in verbesExistants["data"]){
       return {"code": 400, "msg": `le verbe '${verbe}' existe déja`}
     }
     const errors = this.checkIsValidVerbe(body)
@@ -360,7 +360,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
-    if(!(verbe in verbesExistants)){
+    if(!(verbe in verbesExistants["data"])){
       return {"code": 400, "msg": `le verbe '${verbe}' n'existe pas`}
     }
     const errors = this.checkIsValidVerbe(body)
@@ -381,7 +381,7 @@ export class LexiqueController {
       return {"code": 400, "msg": `le thème d'un haiku est toujours printemps, été, automne ou hiver`}
     }
     const verbesExistants = this.lexiqueService.getVerbesByTheme(theme);
-    if(!(verbe in verbesExistants)){
+    if(!(verbe in verbesExistants["data"])){
       return {"code": 400, "msg": `le verbe '${verbe}' n'existe pas`}
     }
     return this.lexiqueService.deleteVerbe(theme,verbe);

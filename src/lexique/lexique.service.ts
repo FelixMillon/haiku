@@ -37,22 +37,20 @@ export class LexiqueService {
   }
   createNom(theme: string,nom: string, body: Nom): object{
     try{
-      let noms = this.getNoms();
       noms[theme][nom] = body;
       const updated = updateJson("./public/assets/mots/noms.json",noms);
       return {"code": 200, "inserted": updated};
-    }catch{
-      return {"code": 500, "message": `error while inserting '${nom}'`, "inserted": false};
+    }catch(e){
+      return {"code": 500, "message": `error while inserting '${nom}': ${e}`, "inserted": false};
     }
   }
   deleteNom(theme: string,nom: string): object{
     try{
-      let noms = this.getNoms();
       delete noms[theme][nom];
       const updated = updateJson("./public/assets/mots/noms.json",noms); 
       return {"code": 200, "inserted": updated};
-    }catch{
-      return {"code": 500, "message": `error while deleting '${nom}'`, "deleted": false};
+    }catch(e){
+      return {"code": 500, "message": `error while deleting '${nom}': ${e}`, "deleted": false};
     }
   }
 
@@ -90,7 +88,6 @@ export class LexiqueService {
   }
   createPronom(type: string, plurality: string, pronom: string, body: Pronom): object{
     try{
-      let pronoms = this.getPronoms();
       pronoms[type][plurality][pronom] = body;
       const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
       return {"code": 200, "inserted": updated};
@@ -100,7 +97,6 @@ export class LexiqueService {
   }
   deletePronom(type: string, plurality: string, pronom: string): object{
     try{
-      let pronoms = this.getPronoms();
       delete pronoms[type][plurality][pronom];
       const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
       return {"code": 200, "inserted": updated};
@@ -143,7 +139,6 @@ export class LexiqueService {
   }
   createAdjectif(theme: string,genre: string,adjectif: string, body: Adjectif): object {
     try{
-      let adjectifs = this.getAdjectifs();
       adjectifs[theme][genre][adjectif] = body;
       const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
       return {"code": 200, "inserted": updated};
@@ -154,7 +149,6 @@ export class LexiqueService {
   }
   deleteAdjectif(theme: string,genre: string,adjectif: string): object {
     try{
-      let adjectifs = this.getAdjectifs();
       delete adjectifs[theme][genre][adjectif];
       const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
       return {"code": 200, "inserted": updated};
@@ -190,7 +184,6 @@ export class LexiqueService {
   }
   createVerbe(theme: string,verbe: string, body: Verbe): object {
     try{
-      let verbes = this.getVerbes();
       verbes[theme][verbe] = body;
       const updated = updateJson("./public/assets/mots/verbes.json",verbes);
       return {"code": 200, "inserted": updated};
@@ -200,7 +193,6 @@ export class LexiqueService {
   }
   deleteVerbe(theme: string,verbe: string): object {
     try{
-      let verbes = this.getVerbes();
       delete verbes[theme][verbe];
       const updated = updateJson("./public/assets/mots/verbes.json",verbes);
       return {"code": 200, "inserted": updated};
