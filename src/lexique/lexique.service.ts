@@ -12,96 +12,192 @@ import { updateJson } from '../bdd/manage_json';
 @Injectable()
 export class LexiqueService {
   getNoms(): object {
-    return noms;
+    try{
+      const data = noms
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading noms`};
+    }
   }
   getNomsByTheme(theme: string): object {
-    return noms[theme];
+    try{
+      const data = noms[theme]
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading noms by theme`};
+    }
   }
   getNom(theme: string,nom: string): object{
-    return noms[theme][nom];
+    try{
+      const data = noms[theme][nom];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading nom '${nom}'`};
+    }
   }
-  createNom(theme: string,nom: string, body: Nom): boolean{
-    let noms = this.getNoms();
-    noms[theme][nom] = body;
-    const updated = updateJson("./public/assets/mots/noms.json",noms);
-    return updated;
+  createNom(theme: string,nom: string, body: Nom): object{
+    try{
+      noms[theme][nom] = body;
+      const updated = updateJson("./public/assets/mots/noms.json",noms);
+      return {"code": 200, "inserted": updated};
+    }catch(e){
+      return {"code": 500, "message": `error while inserting '${nom}': ${e}`, "inserted": false};
+    }
   }
-  deleteNom(theme: string,nom: string): boolean{
-    let noms = this.getNoms();
-    delete noms[theme][nom];
-    const updated = updateJson("./public/assets/mots/noms.json",noms); 
-    return updated;
+  deleteNom(theme: string,nom: string): object{
+    try{
+      delete noms[theme][nom];
+      const updated = updateJson("./public/assets/mots/noms.json",noms); 
+      return {"code": 200, "inserted": updated};
+    }catch(e){
+      return {"code": 500, "message": `error while deleting '${nom}': ${e}`, "deleted": false};
+    }
   }
 
   getPronoms(): object {
-    return pronoms;
-  }
-  createPronom(type: string, plurality: string, pronom: string, body: Pronom): boolean{
-    let pronoms = this.getPronoms();
-    pronoms[type][plurality][pronom] = body;
-    const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
-    return updated;
-  }
-  deletePronom(type: string, plurality: string, pronom: string): boolean{
-    let pronoms = this.getPronoms();
-    delete pronoms[type][plurality][pronom];
-    const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
-    return updated;
+    try{
+      const data = pronoms
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronoms`};
+    }
   }
   getPronomsByType(type: string): object {
-    return pronoms[type];
+    try{
+      const data = pronoms[type];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronoms by type '${type}'`};
+    }
   }
   getPronomsByTypeAndPlurality(type: string,plurality: string): object{
-    return pronoms[type][plurality];
+    try{
+      const data = pronoms[type][plurality];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronoms by type '${type}' and plurality '${plurality}'`};
+    }
   }
   getPronom(type: string,plurality: string, pronom: string): object{
-    return pronoms[type][plurality][pronom];
+    try{
+      const data = pronoms[type][plurality][pronom];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading pronom '${pronom}'`};
+    }
+  }
+  createPronom(type: string, plurality: string, pronom: string, body: Pronom): object{
+    try{
+      pronoms[type][plurality][pronom] = body;
+      const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
+      return {"code": 200, "inserted": updated};
+    }catch{
+      return {"code": 500, "message": `error while inserting '${pronom}'`, "inserted": false};
+    }
+  }
+  deletePronom(type: string, plurality: string, pronom: string): object{
+    try{
+      delete pronoms[type][plurality][pronom];
+      const updated = updateJson("./public/assets/mots/pronoms.json",pronoms);
+      return {"code": 200, "inserted": updated};
+    }catch{
+      return {"code": 500, "message": `error while deleting '${pronom}'`, "deleted": false};
+    }
   }
 
   getAdjectifs(): object {
-    return adjectifs;
+    try{
+      const data = adjectifs
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectifs`};
+    }
   }
   getAdjectifsByTheme(theme: string): object {
-    return adjectifs[theme];
+    try{
+      const data = adjectifs[theme];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectifs by theme '${theme}'`};
+    }
   }
   getAdjectifsByThemeAndGenre(theme: string,genre: string): object {
-    return adjectifs[theme][genre];
+    try{
+      const data = adjectifs[theme][genre];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectifs by theme '${theme}' and genre '${genre}'`};
+    }
   }
   getAdjectif(theme: string,genre: string,adjectif: string): object {
-    return adjectifs[theme][genre][adjectif];
+    try{
+      const data = adjectifs[theme][genre][adjectif];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading adjectif '${adjectif}'`};
+    }
   }
-  createAdjectif(theme: string,genre: string,adjectif: string, body: Adjectif): boolean {
-    let adjectifs = this.getAdjectifs();
-    adjectifs[theme][genre][adjectif] = body;
-    const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
-    return updated;
+  createAdjectif(theme: string,genre: string,adjectif: string, body: Adjectif): object {
+    try{
+      adjectifs[theme][genre][adjectif] = body;
+      const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
+      return {"code": 200, "inserted": updated};
+    }catch{
+      return {"code": 500, "message": `error while inserting '${adjectif}'`, "inserted": false};
+    }
+
   }
-  deleteAdjectif(theme: string,genre: string,adjectif: string): boolean {
-    let adjectifs = this.getAdjectifs();
-    delete adjectifs[theme][genre][adjectif];
-    const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
-    return updated;
+  deleteAdjectif(theme: string,genre: string,adjectif: string): object {
+    try{
+      delete adjectifs[theme][genre][adjectif];
+      const updated = updateJson("./public/assets/mots/adjectifs.json",adjectifs);
+      return {"code": 200, "inserted": updated};
+    }catch{
+      return {"code": 500, "message": `error while deleting '${adjectif}'`, "deleted": false};
+    }
+
   }
 
   getVerbes(): object {
-    return verbes;
+    try{
+      const data = verbes;
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading verbes`};
+    }
   }
   getVerbesByTheme(theme: string): object {
-    return verbes[theme];
+    try{
+      const data = verbes[theme];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading verbes by theme : '${theme}'`};
+    }
   }
   getVerbe(theme: string, verbe: string): object {
-    return verbes[theme][verbe];
+    try{
+      const data = verbes[theme][verbe];
+      return {"code": 200, "data": data};
+    }catch{
+      return {"code": 500, "message": `error while reading verbe '${verbe}'`};
+    }
   }
-  createVerbe(theme: string,verbe: string, body: Verbe): boolean {
-    let verbes = this.getVerbes();
-    verbes[theme][verbe] = body;
-    const updated = updateJson("./public/assets/mots/verbes.json",verbes);
-    return updated;
+  createVerbe(theme: string,verbe: string, body: Verbe): object {
+    try{
+      verbes[theme][verbe] = body;
+      const updated = updateJson("./public/assets/mots/verbes.json",verbes);
+      return {"code": 200, "inserted": updated};
+    }catch{
+      return {"code": 500, "message": `error while inserting '${verbe}'`, "inserted": false};
+    }
   }
-  deleteVerbe(theme: string,verbe: string): boolean {
-    let verbes = this.getVerbes();
-    delete verbes[theme][verbe];
-    const updated = updateJson("./public/assets/mots/verbes.json",verbes);
-    return updated;
+  deleteVerbe(theme: string,verbe: string): object {
+    try{
+      delete verbes[theme][verbe];
+      const updated = updateJson("./public/assets/mots/verbes.json",verbes);
+      return {"code": 200, "inserted": updated};
+    }catch{
+      return {"code": 500, "message": `error while deleting '${verbe}'`, "deleted": false};
+    }
   }
 }
